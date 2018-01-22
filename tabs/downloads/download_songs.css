@@ -171,9 +171,9 @@ a:hover{
 
 ul li a{
     color: #ef076b;
-    text-align: center;
     text-decoration: none;
-    
+    padding-right: 15px;
+
 }
 .topnav {
     overflow: hidden;
@@ -187,6 +187,7 @@ li{
     padding-bottom: 30px;
     list-style: square;
     list-style-position: inside;
+    text-align: left;
 }
 
 .downloadClass {
@@ -220,7 +221,7 @@ p5 {
 /* Create three unequal columns that floats next to each other */
 .column {
     float: left;
-    padding: 20px;
+    padding: 10px;
 }
 
 /* Left and right column */
