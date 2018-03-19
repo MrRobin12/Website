@@ -1,10 +1,12 @@
 @media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
+  and (min-device-width: 320px) 
+  and (max-device-width: 767px)
   and (-webkit-min-device-pixel-ratio: 2) { 
-      .desktopText { display: none; }
+      .desktop { display: none; }
       .social { display: none; }
-      .mobileText { display: block; }
+      #tabletBar { display: none; }
+      .tablet { display: none; }
+      .mobile { display: block; }
       #mobileBar { display: block; }  
       
 #banner {
@@ -29,7 +31,7 @@
     word-spacing: 4px;       
 }
       
-#overlay {
+#mobile-overlay {
     position: fixed; /* Sit on top of the page content */
     display: none; /* Hidden by default */
     width: 100%; /* Full width (cover the whole page) */

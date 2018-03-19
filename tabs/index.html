@@ -7,39 +7,119 @@
     <title>MrRobin12s Hemsida</title>	
     <link rel="stylesheet" type="text/css" href="dekstop_class.css">
     <link rel="stylesheet" type="text/css" href="mobile_class.css">
+    <link rel="stylesheet" type="text/css" href="tablet_class.css">
+    
+    <script src="scripts/mobile_overlay.js"></script>
+    <script src="scripts/tablet_overlay.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="desktop_navbar.css">
+    <script src="scripts/desktop_navbar.js"></script>
+    
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="./images/images/logos/MrWebsiteLogo.png">
 </head>    
 <body>          
- 
-<div id="overlay" onclick="off()">
-    <center><div id="text">Hello there! <br> 2018 is awesome! <br><br> MrRobin12</div></center>   
-</div>
     
 <div id="banner"></div>
-<i class="fa fa-bars" id="mobileBar" onclick="on()"></i>  
     
-<br><br><center><a class="desktopText">Hemsidan är just nu tillfället under konstruktion! <br> Var vänlig och kontakta Robin/MrRobin för mer info!</a></center> 
+<div class="desktop">
     
-<br><center><a href="https://www.youtube.com/robinspelaspel" class="social" target="_blank">YouTube: MrRobin12</a></center>
-<center><a href="https://www.snapchat.com/add/robinspelaspel" class="social" target="_blank">Snapchat: robinspelaspel</a></center> 
-<center><a href="https://www.twitter.com/MrRobin1234" class="social" target="_blank">Twitter: MrRobin1234</a></center> 
-<center><a href="https://www.twitch.tv/MrRobin12ftw" class="social" target="_blank">Twitch: MrRobin12ftw</a></center> 
+<div class="navbar">
+<a href="#home">HOME</a>
+<a href="#news">NEWS</a>
     
- <br><br><center><a class="desktopText">Stay tuned for more updates and info!</a></center>    
+<div class="dropdown">    
+    <button class="dropbtn" onclick="myFunction()">DOWNLOADS
+    <i class="fa fa-caret-down"></i>
+    </button>    
+        <div class="dropdown-content" id="myDropdown">
+            <a href="#songs">SONGS</a>
+            <a href="#games">GAMES</a>
+            <a href="#apps">APPS</a>
+        </div>
+</div>
+       
+    <a href="#setup">GAMING SETUP</a>
+    <a href="#faq">FAQ</a>
+    <a href="#shop">SHOP</a>
+    <a href="#settings">SETTINGS</a>
+</div> 
     
-<center><a class="mobileText">Hemsidan är för tillfället <br>inte byggd för telefoner!<br><br> Gå in på din dator istället!</a></center> 
+    <br><br><center><a class="desktopText">Hemsidan är just nu tillfället under konstruktion! <br> Var vänlig och kontakta Robin/MrRobin för mer info!</a></center>  
     
-<script>
-function on() {
-    document.getElementById("overlay").style.display = "block";
-}
+    <center><p id="desktop_localfile"></p></center>  
+    <script>
+    function readTextFile(file)
+    {
+        var rawFile = new XMLHttpRequest();
+        rawFile.open("GET", file, false);
+        rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                document.getElementById("desktop_localfile").innerHTML = allText;
+            }
+        }
+    }
+    rawFile.send(null);
+    }
+        
+    window.onload = readTextFile('file:///C:/Users/Robin/Desktop/Viktiga saker/Projects/MrWebsite/tabs/test.txt');
+    </script>
+</div>
 
-function off() {
-    document.getElementById("overlay").style.display = "none";
-}
-</script>
+<div class="mobile">
+   
+    <center><p id="mobile_localfile">Test</p></center>  
+    <script>
+    function readTextFile(file)
+    {
+        var rawFile = new XMLHttpRequest();
+        rawFile.open("GET", file, false);
+        rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                document.getElementById("mobile_localfile").innerHTML = allText;
+            }
+        }
+    }
+    rawFile.send(null);
+    }
+        
+    window.onload = readTextFile('file:///C:/Users/Robin/Desktop/Viktiga saker/Projects/MrWebsite/tabs/test.txt');
+    </script>
+    
+    <div id="mobile-overlay" onclick="mobileOff()">
+    <center><div id="text">Hello there! <br> 2018 is awesome! <br><br> MrRobin12 <br> Mobile Version</div></center>   
+    </div>
+    
+    <i class="fa fa-bars" id="mobileBar" onclick="mobileOn()"></i>
+    <center><a>Hemsidan är för tillfället <br>inte byggd för telefoner!<br><br> Gå in på din dator istället!</a></center>     
+    
+    <br><center><a target="_blank" href="https://www.snapchat.com/add/robinspelaspel"><img class="WebPlayer_snapcode" src="https://app.snapchat.com/web/deeplink/snapcode?username=robinspelaspel&amp;type=SVG&amp;bitmoji=enable" width="40%" height="40%" alt="Snapcode" W></a></center>
+    
+    <br><center><a href="instagram://user?username=mrrobinftw"><a href="#" style="padding: 20px; font-size: 100px; text-decoration: none;  background: linear-gradient(to right, rgba(244,66,137,1), rgba(255,5,104,1)); color: white; border-radius: 25%; border-style: solid; border-width: 5px; border-color: hotpink;" class="fa fa-instagram"></a></a></center>
+    
+    <br><center><a href="https://twitter.com/MrRobin1234?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow</a></center><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>    
+    
+<div class="tablet">
+    
+    <div id="tablet-overlay" onclick="tabletOff()">
+    <center><div id="text">Hello there! <br> 2018 is awesome! <br><br> MrRobin12 <br> Tablet Version</div></center>
+    </div>
+    
+    <i class="fa fa-bars" id="tabletBar" onclick="tabletOn()"></i>
+    <center><a>Hemsidan är för tillfället <br>inte byggd för surfplattor!<br><br> Gå in på din dator istället!</a></center>     
+</div>  
        
     
 </body>

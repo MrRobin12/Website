@@ -1,16 +1,19 @@
 @media screen 
-  and (min-device-width: 1200px) 
-  and (max-device-width: 1600px) 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 2560px) 
   and (-webkit-min-device-pixel-ratio: 1) {
-      .mobileText { display: none; }
+      .mobile { display: none; }
       #mobileBar { display: none; }
+      .tablet { display: none; }
+      #tabletBar { display: none; }
       #text { display: none; }
-      .desktopText { display: block; }
+      .desktop { display: block; }
       .social { display: block; }
 
 body {
 	text-align: auto;
     background: white;   
+    padding-bottom: 100em;
 }
 
 #banner {
@@ -23,11 +26,10 @@ body {
     background-position: center;
 }
       
-.desktopText {
+.desktop {
     font-family: TypoGraphica;
     font-size: 1.2em;
-    word-spacing: 3px;
-    
+    word-spacing: 3px;   
 }
       
 .social{

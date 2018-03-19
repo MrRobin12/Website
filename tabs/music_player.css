@@ -1,0 +1,67 @@
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+}
+
+.content {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.75);
+    color: #f1f1f1;
+    width: 100%;
+    height: 100%;
+}
+
+.content h1 {
+    margin-top: 200px;
+}
+
+#audioplayer{
+    position: relative;
+	width: 480px;
+	height: 60px;
+	margin: 50px auto auto auto;
+    border: solid;
+}
+
+#pButton{
+    height:60px; 
+    width: 60px;
+    border: none;
+    float:left;
+    outline:none;
+}
+
+#pButton.pause {
+    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNOSAxNi45ODV2LTEwLjAyMWw5IDUuMTU3LTkgNC44NjR6bTQtMTQuOThjNS4wNDYuNTA0IDkgNC43ODIgOSA5Ljk3IDAgMS40NjctLjMyNCAyLjg1Ni0uODkyIDQuMTEzbDEuNzM4IDEuMDA2Yy43MzItMS41NTUgMS4xNTQtMy4yODUgMS4xNTQtNS4xMTkgMC02LjMwMy00Ljg0Mi0xMS40NjQtMTEtMTEuOTc1djIuMDA1em0tMTAuMTA5IDE0LjA4MmMtLjU2OC0xLjI1Ny0uODkxLTIuNjQ2LS44OTEtNC4xMTIgMC01LjE4OCAzLjk1NC05LjQ2NiA5LTkuOTd2LTIuMDA1Yy02LjE1OC41MTEtMTEgNS42NzItMTEgMTEuOTc1IDAgMS44MzMuNDIxIDMuNTYzIDEuMTUzIDUuMTE4bDEuNzM4LTEuMDA2em0xNy4yMTMgMS43MzRjLTEuODE3IDIuNTIzLTQuNzY5IDQuMTc1LTguMTA0IDQuMTc1cy02LjI4OC0xLjY1MS04LjEwNS00LjE3NmwtMS43NDYgMS4wMTFjMi4xNjcgMy4xMjIgNS43NjggNS4xNjkgOS44NTEgNS4xNjkgNC4wODIgMCA3LjY4My0yLjA0NyA5Ljg1MS01LjE2OGwtMS43NDctMS4wMTF6Ii8+PC9zdmc+') no-repeat;
+    background-size: 42px;
+    background-position: center;
+}
+
+#pButton.play {
+    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTEgMjJoLTR2LTIwaDR2MjB6bTYtMjBoLTR2MjBoNHYtMjB6Ii8+PC9zdmc+') no-repeat;
+    background-size: 42px;
+    background-position: center;
+}
+
+#timeline{
+	width: 400px;
+	height: 20px;
+	margin-top: 20px;
+	float: left;
+	border-radius: 15px;
+	background: rgba(0,0,0,.3);
+    position: relative;
+}
+#playhead{
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	margin-top: 1px;
+	background: rgba(0, 0, 0,1);
+    position: absolute;
+    left: 0px;
+}
