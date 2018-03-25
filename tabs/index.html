@@ -4,17 +4,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <meta name="google" value="notranslate">
+    
     <title>MrRobin12s Hemsida</title>
+    
+    <link rel="stylesheet" type="text/css" href="navibar_style.css">
     <link rel="stylesheet" type="text/css" href="dekstop_class.css">
     <link rel="stylesheet" type="text/css" href="mobile_class.css">
     <link rel="stylesheet" type="text/css" href="tablet_class.css">
     
-    <script src="scripts/mobile_overlay.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="scripts/navibar_javascript.js"></script>
     <script src="scripts/tablet_overlay.js"></script>
-    
-    <link rel="stylesheet" type="text/css" href="desktop_navbar.css">
-    <script src="scripts/desktop_navbar.js"></script>
-    
+
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="./images/images/logos/MrWebsiteLogo.png">
@@ -25,100 +26,110 @@
     
 <div class="desktop">
     
-<div class="navbar">
-<a href="#home">HOME</a>
-<a href="#news">NEWS</a>
+    <div id="navbar">
+        <a href="#home">HOME</a>
+        <a href="#news">NEWS</a>
+        <a href="#downloads">DOWNLOADS</a>
+        <a href="#setup">SETUP</a>
+        <a href="#aboutme">ABOUT ME</a>
+        <a href="#faq">FAQ</a>
+        <a href="#settings">SETTINGS</a>
+    </div>
     
-<div class="dropdown">    
-    <button class="dropbtn" onclick="myFunction()">DOWNLOADS
-    <i class="fa fa-caret-down"></i>
-    </button>    
-        <div class="dropdown-content" id="myDropdown">
-            <a href="#songs">SONGS</a>
-            <a href="#games">GAMES</a>
-            <a href="#apps">APPS</a>
+    <div class="content">
+        <div id="contact">
+        <p>Hi!</p>
         </div>
-</div>
-       
-    <a href="#setup">GAMING SETUP</a>
-    <a href="#faq">FAQ</a>
-    <a href="#shop">SHOP</a>
-    <a href="#settings">SETTINGS</a>
-</div> 
+    </div>
+    
+    <script>
+    // When the user scrolls the page, execute myFunction 
+window.onscroll = function() {myFunction()};
+
+// Get the navbar
+var navbar = document.getElementById("navbar");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+    </script>
     
     <br><br><center><a class="desktopText">Hemsidan är just nu tillfället under konstruktion! <br> Var vänlig och kontakta Robin/MrRobin för mer info!</a></center>  
-    
-    <center><p id="desktop_localfile"></p></center>  
-    <script>
-    function readTextFile(file)
-    {
-        var rawFile = new XMLHttpRequest();
-        rawFile.open("GET", file, false);
-        rawFile.onreadystatechange = function ()
-    {
-        if(rawFile.readyState === 4)
-        {
-            if(rawFile.status === 200 || rawFile.status == 0)
-            {
-                var allText = rawFile.responseText;
-                document.getElementById("desktop_localfile").innerHTML = allText;
-            }
-        }
-    }
-    rawFile.send(null);
-    }
-        
-    window.onload = readTextFile('file:///C:/Users/Robin/Desktop/Viktiga saker/Projects/MrWebsite/tabs/test.txt');
-    </script>
+
 </div>
 
 <div class="mobile">
-   
-    <center><p id="mobile_localfile">Test</p></center>  
-    <script>
-    function readTextFile(file)
-    {
-        var rawFile = new XMLHttpRequest();
-        rawFile.open("GET", file, false);
-        rawFile.onreadystatechange = function ()
-    {
-        if(rawFile.readyState === 4)
-        {
-            if(rawFile.status === 200 || rawFile.status == 0)
-            {
-                var allText = rawFile.responseText;
-                document.getElementById("mobile_localfile").innerHTML = allText;
-            }
-        }
-    }
-    rawFile.send(null);
-    }
-        
-    window.onload = readTextFile('file:///C:/Users/Robin/Desktop/Viktiga saker/Projects/MrWebsite/tabs/test.txt');
-    </script>
     
-    <div id="mobile-overlay" onclick="mobileOff()">
-    <center><div id="text">Hello there! <br> 2018 is awesome! <br><br> MrRobin12 <br> Mobile Version</div></center>   
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="mobilebar.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <a class="navbar-brand" href="#">MrRobin12's Website</a>
     </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="#"><i class="fa fa-newspaper-o"></i> News</a></li>
+        <li><a href="#"><i class="fa fa-cloud-download"></i> Downloads</a></li> 
+        <li><a href="#"><i class="fa fa-gamepad"></i> Setup</a></li> 
+        <li><a href="#"><i class="fa fa-address-book-o"></i> About Me</a></li> 
+        <li><a href="#"><i class="fa fa-diamond"></i> FAQ</a></li> 
+        <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li> 
+      </ul>       
+      <br><ul class="nav navbar-nav navbar-right">
+        <li><a id="Button1"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a id="Button2" onclick="SignOn()"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
     
-    <i class="fa fa-bars" id="mobileBar" onclick="mobileOn()"></i>
-    <center><a>Hemsidan är för tillfället <br>inte byggd för telefoner!<br><br> Gå in på din dator istället!</a></center>     
+    <script>
+        function SignOn()
+        {   
+        document.getElementById("Button1").innerHTML = '<span class="glyphicon glyphicon-signal"></span>' + " My Profile";      
+        document.getElementById("Button2").onclick = function()  { SignOff() }
+        document.getElementById("Button2").innerHTML = '<span class="glyphicon glyphicon-log-out"></span>' + " Sign Out";
+        }
+        
+        function SignOff()
+        {
+        document.getElementById("Button1").innerHTML = '<span class="glyphicon glyphicon-user"></span>' + " Sign Up";
+        document.getElementById("Button2").onclick = function()  { SignOn() }
+        document.getElementById("Button2").innerHTML = '<span class="glyphicon glyphicon-log-in"></span>' + " Login";   
+        }
+    </script>
     
     <br><center><a target="_blank" href="https://www.snapchat.com/add/robinspelaspel"><img class="WebPlayer_snapcode" src="https://app.snapchat.com/web/deeplink/snapcode?username=robinspelaspel&amp;type=SVG&amp;bitmoji=enable" width="40%" height="40%" alt="Snapcode" W></a></center>
     
     <br><center><a href="instagram://user?username=mrrobinftw" style="padding: 20px; font-size: 100px; text-decoration: none;  background: linear-gradient(to right, rgba(244,66,137,1), rgba(255,5,104,1)); color: white; border-radius: 25%; border-style: solid; border-width: 5px; border-color: hotpink;" class="fa fa-instagram"></a></center>
     
     <br><center><a href="https://twitter.com/MrRobin1234?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow</a></center><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    
+    <br><center><a target="_blank" href="https://youtube.com/user/robinspelaspel">YOUTUBE</a></center>
 </div>    
     
 <div class="tablet">
-    
-    <div id="tablet-overlay" onclick="tabletOff()">
-    <center><div id="text">Hello there! <br> 2018 is awesome! <br><br> MrRobin12 <br> Tablet Version</div></center>
-    </div>
-    
-    <i class="fa fa-bars" id="tabletBar" onclick="tabletOn()"></i>
-    <center><a>Hemsidan är för tillfället <br>inte byggd för surfplattor!<br><br> Gå in på din dator istället!</a></center>     
+ 
 </div>  
        
     

@@ -7,7 +7,6 @@
       #tabletBar { display: none; }
       .tablet { display: none; }
       .mobile { display: block; }
-      #mobileBar { display: block; }  
       
 #banner {
     width: 100%;
@@ -18,43 +17,6 @@
     background-color: purple;
     background-position: center;
 }
-      
-#mobileBar {
-    font-size: 1.8em;
-    margin-top: 10px;
-    margin-left: 10px;
-}
-      
-.mobileText {
-    font-family: TypoGraphica;
-    font-size: 1.2em;
-    word-spacing: 4px;       
-}
-      
-#mobile-overlay {
-    position: fixed; /* Sit on top of the page content */
-    display: none; /* Hidden by default */
-    width: 100%; /* Full width (cover the whole page) */
-    height: 100%; /* Full height (cover the whole page) */
-    top: 0; 
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-    cursor: pointer; /* Add a pointer on hover */
-}
-      
-#text{
-    position: absolute;
-    top: 75%;
-    left: 50%;
-    font-family: TypoGraphica;
-    font-size: 2em;
-    word-spacing: 2px; 
-    color: white;
-    transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-}
+        
       
 }
