@@ -1,0 +1,135 @@
+#wallpaper_image {
+    background-image: url(images/4k%20wallpaper.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 350px 10px;
+    -webkit-filter: blur(10px);
+    filter: blur(3px);
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background: url('gifs/old%20pc.gif') center center no-repeat;
+    background-size: cover;
+    opacity: 0.75;
+    font-size: 16px;
+    padding: 16px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    text-align: center;
+}
+.button2 {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background: url('gifs/old%20pc.gif') center center no-repeat;
+    background-size: cover;
+    opacity: 0.75;
+    font-size: 16px;
+    padding: 16px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    text-align: center;
+}
+.signIn {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background: url('cute cat.gif') center center no-repeat;
+    background-size: cover;
+    opacity: 0.8;
+    font-size: 16px;
+    padding: 16px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    text-align: center;
+}
+
+.button:focus {outline:0;}
+.button2:focus {outline:0;}
+.signIn:focus {outline:0;}
+
+.button span {
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.button2 span {
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.signIn span {
+    color: blue;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button span:after {
+    content: '\00bb';
+    color: white;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+.button2 span:after {
+    content: '\00bb';
+    color: white;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+.signIn span:after {
+    content: '\00bb';
+    color: blue;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+
+.button:hover span {
+    padding-right: 25px;
+}
+.button2:hover span {
+    padding-right: 25px;
+}
+.signIn:hover span {
+    padding-right: 25px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+.button2:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+.signIn:hover span:after {
+    opacity: 1;
+    right: 0;
+}

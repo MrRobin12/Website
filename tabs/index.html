@@ -7,73 +7,51 @@
     
     <title>MrRobin12s Hemsida</title>
     
-    <link rel="stylesheet" type="text/css" href="navibar_style.css">
-    <link rel="stylesheet" type="text/css" href="dekstop_class.css">
-    <link rel="stylesheet" type="text/css" href="mobile_class.css">
-    <link rel="stylesheet" type="text/css" href="tablet_class.css">
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="scripts/navibar_javascript.js"></script>
     <script src="scripts/tablet_overlay.js"></script>
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="shortcut icon" href="./images/images/logos/MrWebsiteLogo.png">
+    <link rel="shortcut icon" href="./images/icons/Mr%20Web%20Icon.ico">
 </head>    
-<body>          
+<body>
     
 <div id="banner"></div>
     
 <div class="desktop">
+<link rel="stylesheet" type="text/css" href="dekstop_class.css">  
     
-    <div id="navbar">
-        <a href="#home">HOME</a>
-        <a href="#news">NEWS</a>
-        <a href="#downloads">DOWNLOADS</a>
-        <a href="#setup">SETUP</a>
-        <a href="#aboutme">ABOUT ME</a>
-        <a href="#faq">FAQ</a>
-        <a href="#settings">SETTINGS</a>
-    </div>
+    <ul class="topnav">
+        <li><a class="active" href=""><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="#news"><i class="fa fa-newspaper-o"></i> News</a></li>
+        <li><a href="#forums"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">forum</i> Forums</a></li>
+        <li><a href="desktop/live.html" style="margin-left: 60px"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">devices</i> Live</a></li>
+        
+        <li><a href="#news"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">casino</i> Merch</a></li>
+        <li><a href="#news"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">share</i> Social</a></li>
+        
+        <li><a href="desktop/setup.html" style="margin-left: 60px"><i class="fa fa-gamepad"></i> Setup</a></li>  
+        <li><a href="#news"><i class="fa fa-address-book-o"></i> About Me</a></li>
+        <li><a href="#news"><i class="fa fa-diamond"></i> FAQ</a></li>
+        
+        <li class="right"><a href="#about"><span class="glyphicon glyphicon-log-in"></span> Login In</a></li>
+        <li class="right"><a href="#contact"><i class="fa fa-cog"></i> Settings</a></li>
+        <li class="right"><a href="#news"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+    </ul>
     
-    <div class="content">
-        <div id="contact">
-        <p>Hi!</p>
-        </div>
-    </div>
-    
-    <script>
-    // When the user scrolls the page, execute myFunction 
-window.onscroll = function() {myFunction()};
-
-// Get the navbar
-var navbar = document.getElementById("navbar");
-
-// Get the offset position of the navbar
-var sticky = navbar.offsetTop;
-
-// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
-}
-    </script>
-    
-    <br><br><center><a class="desktopText">Hemsidan är just nu tillfället under konstruktion! <br> Var vänlig och kontakta Robin/MrRobin för mer info!</a></center>  
-
 </div>
 
-<div class="mobile">
-    
+<div class="mobile">  
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="mobile_class.css">
     <link rel="stylesheet" href="mobilebar.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
     <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -87,18 +65,22 @@ function myFunction() {
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#"><i class="fa fa-home"></i> Home</a></li>
-        <li><a href="#"><i class="fa fa-newspaper-o"></i> News</a></li>
-        <li><a href="#"><i class="fa fa-cloud-download"></i> Downloads</a></li> 
-        <li><a href="#"><i class="fa fa-gamepad"></i> Setup</a></li> 
-        <li><a href="#"><i class="fa fa-address-book-o"></i> About Me</a></li> 
-        <li><a href="#"><i class="fa fa-diamond"></i> FAQ</a></li> 
+        <li class="active"><a href=""><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="mobile/news.html"><i class="fa fa-newspaper-o"></i> News</a></li>
+        <li><a href="mobile/forums.html"><i class="material-icons" style="font-size:18px; vertical-align: bottom;">forum</i> Forums</a></li>
+        <li><a href="mobile/live.html"><i class="material-icons" style="font-size:18px; vertical-align: bottom;">devices</i> Live</a></li>
+          
+        <br><li><a href="mobile/merch.html"><i class="material-icons" style="font-size:18px; vertical-align: bottom;">casino</i> Merch</a></li>
+        <li><a href="mobile/social.html"><i class="material-icons" style="font-size:18px; vertical-align: bottom;">share</i> Social</a></li>
+        <li><a href="mobile/setup.html"><i class="fa fa-gamepad"></i> Setup</a></li> 
+          
+        <br><li><a href="mobile/about_me.html"><i class="fa fa-address-book-o"></i> About Me</a></li> 
+        <li><a href="mobile/faq.html"><i class="fa fa-diamond"></i> FAQ</a></li>
+          
+        <br><li><a id="Button1"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
         <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li> 
+        <li><a id="Button2" onclick="SignOn()"><span class="glyphicon glyphicon-log-in"></span> Login In</a></li>
       </ul>       
-      <br><ul class="nav navbar-nav navbar-right">
-        <li><a id="Button1"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a id="Button2" onclick="SignOn()"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
     </div>
   </div>
 </nav>
@@ -119,19 +101,14 @@ function myFunction() {
         }
     </script>
     
-    <br><center><a target="_blank" href="https://www.snapchat.com/add/robinspelaspel"><img class="WebPlayer_snapcode" src="https://app.snapchat.com/web/deeplink/snapcode?username=robinspelaspel&amp;type=SVG&amp;bitmoji=enable" width="40%" height="40%" alt="Snapcode" W></a></center>
     
-    <br><center><a href="instagram://user?username=mrrobinftw" style="padding: 20px; font-size: 100px; text-decoration: none;  background: linear-gradient(to right, rgba(244,66,137,1), rgba(255,5,104,1)); color: white; border-radius: 25%; border-style: solid; border-width: 5px; border-color: hotpink;" class="fa fa-instagram"></a></center>
     
-    <br><center><a href="https://twitter.com/MrRobin1234?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow</a></center><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    
-    <br><center><a target="_blank" href="https://youtube.com/user/robinspelaspel">YOUTUBE</a></center>
 </div>    
     
 <div class="tablet">
- 
-</div>  
-       
+<link rel="stylesheet" type="text/css" href="tablet_class.css">
     
+</div>  
+         
 </body>
 </html>

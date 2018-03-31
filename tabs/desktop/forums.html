@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="google" value="notranslate">
+    
+    <title>MrRobin12s Hemsida</title>
+    
+    <link rel="stylesheet" type="text/css" href="../dekstop_class.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="../images/images/logos/MrWebsiteLogo.png">
+</head>    
+<body>          
+    
+<div id="banner"></div>
+    
+<div class="desktop">
+<link rel="stylesheet" type="text/css" href="../dekstop_class.css">  
+    
+    <ul class="topnav">
+        <li><a href="../index.html"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="#news"><i class="fa fa-newspaper-o"></i> News</a></li>
+        <li><a href="#forums"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">forum</i> Forums</a></li>
+        <li><a class="active" href="" style="margin-left: 60px"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">devices</i> Live</a></li>
+        
+        <li><a href="#news"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">casino</i> Merch</a></li>
+        <li><a href="#news"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">share</i> Social</a></li>
+        
+        <li><a href="#news" style="margin-left: 60px"><i class="fa fa-gamepad"></i> Setup</a></li>  
+        <li><a href="#news"><i class="fa fa-address-book-o"></i> About Me</a></li>
+        <li><a href="#news"><i class="fa fa-diamond"></i> FAQ</a></li>
+        
+        <li class="right"><a href="#about"><span class="glyphicon glyphicon-log-in"></span> Login In</a></li>
+        <li class="right"><a href="#contact"><i class="fa fa-cog"></i> Settings</a></li>
+        <li class="right"><a href="#news"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+    </ul>
+    
+<br><center><div id="twitch-embed"></div></center>
+<script src="https://embed.twitch.tv/embed/v1.js"></script>
+    
+<center><button id="twButton" onclick="window.open('http://www.twitch.tv/mrrobin12ftw/')" style="margin-top: 2px; color:white; background-color: rebeccapurple; border: none; display: inline-block; text-align: center; padding: 8px 406px; font-family: monospace; font-size: 1.2em;"> Open Twitch Link</button></center>
+    
+<script type="text/javascript">
+      new Twitch.Embed("twitch-embed", {
+        width: 960,
+        chat: 'mobile',
+        allowfullscreen: true,
+        layout: "video",
+        height: 540,
+        channel: "mrrobin12ftw"
+      });
+    </script>    
+    
+<script>
+var channelID = "UC_vt34wimdCzdkrzVejwX9g";
+var key = "AIzaSyA2Ya3aC_Ly-V5w_kM1-wOL8Os9mwJPVvM";
+var videoID = "";
+var url = "";
+var button = "";
+    
+$.ajax({
+    url: "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=" + channelID + "&eventType=live&type=video&key=" + key,
+    dataType: "text",
+    success: function(data) {
+    var json = $.parseJSON(data);
+    videoID = json.items[0].id.videoId; 
+        
+    url = "https://www.youtube.com/embed/" + videoID + "?autoplay=1";
+    button = "http://www.youtube.com/watch?v=" + videoID;
+        
+    $('#ytplayer').attr("src", url);
+    $('#ytButton').attr("onclick", "window.location.href=" + "'" + button + "'");
+    },
+    error: function(data){
+        
+    }
+});    
+</script>
+    
+<br><center><iframe id="ytplayer" width="960px" height="540px" src="" frameborder="0" allowfullscreen></iframe></center>  
+<center><button id="ytButton" onclick="" style="margin-top: 2px; color:white; background-color: red; border: none; display: inline-block; text-align: center; padding: 8px 406px; font-family: monospace; font-size: 1.2em;">  Open YouTube Link</button></center>
+    
+</div>
+    
+<div class="mobile">  
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="mobile_class.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <a class="navbar-brand" href="#">MrRobin12's Website</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href=""><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="mobile/news.html"><i class="fa fa-newspaper-o"></i> News</a></li>
+        <li><a href="mobile/forums.html"><i class="material-icons" style="font-size:18px; vertical-align: bottom;">forum</i> Forums</a></li>
+        <li><a href="mobile/live.html"><i class="material-icons" style="font-size:18px; vertical-align: bottom;">devices</i> Live</a></li>
+          
+        <br><li><a href="mobile/merch.html"><i class="material-icons" style="font-size:18px; vertical-align: bottom;">casino</i> Merch</a></li>
+        <li><a href="mobile/social.html"><i class="material-icons" style="font-size:18px; vertical-align: bottom;">share</i> Social</a></li>
+        <li><a href="mobile/setup.html"><i class="fa fa-gamepad"></i> Setup</a></li> 
+          
+        <br><li><a href="mobile/about_me.html"><i class="fa fa-address-book-o"></i> About Me</a></li> 
+        <li><a href="mobile/faq.html"><i class="fa fa-diamond"></i> FAQ</a></li>
+          
+        <br><li><a id="Button1"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li> 
+        <li><a id="Button2" onclick="SignOn()"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>       
+    </div>
+  </div>
+</nav>
+    
+    <script>
+        function SignOn()
+        {   
+        document.getElementById("Button1").innerHTML = '<span class="glyphicon glyphicon-signal"></span>' + " My Profile";      
+        document.getElementById("Button2").onclick = function()  { SignOff() }
+        document.getElementById("Button2").innerHTML = '<span class="glyphicon glyphicon-log-out"></span>' + " Sign Out";
+        }
+        
+        function SignOff()
+        {
+        document.getElementById("Button1").innerHTML = '<span class="glyphicon glyphicon-user"></span>' + " Sign Up";
+        document.getElementById("Button2").onclick = function()  { SignOn() }
+        document.getElementById("Button2").innerHTML = '<span class="glyphicon glyphicon-log-in"></span>' + " Login";   
+        }
+    </script>
+    
+    
+    
+</div>    
+    
+<div class="tablet">
+<link rel="stylesheet" type="text/css" href="tablet_class.css">
+    
+</div>
+    
+</body>
+</html>

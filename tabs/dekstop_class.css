@@ -1,20 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Amaranth');
+
 @media screen 
-  and (min-device-width: 1024px) 
-  and (max-device-width: 2560px) 
+  and (min-device-width: 800px) 
+  and (max-device-width: 3840px) 
   and (-webkit-min-device-pixel-ratio: 1) {
       .mobile { display: none; }
-      #mobileBar { display: none; }
       .tablet { display: none; }
-      #tabletBar { display: none; }
-      #text { display: none; }
       .desktop { display: block; }
       .social { display: block; }
 
 body {
 	text-align: auto;
+    margin: 0;
     background: white;   
     padding-bottom: 100em;
-}
+}    
 
 #banner {
     width: 100%;
@@ -25,21 +25,35 @@ body {
     background-color: purple;
     background-position: center;
 }
-      
-.desktop {
-    font-family: TypoGraphica;
-    font-size: 1.2em;
-    word-spacing: 3px;   
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
 }
-      
-.social{
-    font-family: TypoGraphica;
-    text-decoration: none;
-    font-size: 1.2em;
-    line-height: 32px;
-    word-spacing: 3px;
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+    display: block;
     color: white;
-    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    text-align: center;
+    color: White;
+    font-family: 'Amaranth', sans-serif;
+    font-size: 1.2em;
+    padding: 12px 14px;
+    text-decoration: none;
 }
-      
+
+ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+ul.topnav li a.active {background-color: rebeccapurple;}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px){
+    ul.topnav li.right, 
+    ul.topnav li {float: none;}
 }

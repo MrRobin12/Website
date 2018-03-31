@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="google" value="notranslate">
+    
+    <title>MrRobin12s Hemsida</title>
+    
+    <link rel="stylesheet" type="text/css" href="../navibar_style.css">
+    <link rel="stylesheet" type="text/css" href="../mobile_class.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="../scripts/navibar_javascript.js"></script>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="../images/images/logos/MrWebsiteLogo.png">
+</head>    
+<body>          
+    
+<div id="banner"></div>
+<div class="mobile">
+    
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../mobilebar.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <a class="navbar-brand" href="#">MrRobin12's Website</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="../index.html"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="./news.html"><i class="fa fa-newspaper-o"></i> News</a></li>
+        <li><a href="./forums.html"><i class="material-icons" style="font-size:18px; vertical-align: bottom;">forum</i> Forums</a></li>
+        <li><a href="./live.html"><i class="material-icons" style="font-size:18px; vertical-align: bottom;">devices</i> Live</a></li>
+          
+        <br><li><a href="./merch.html"><i class="material-icons" style="font-size:18px; vertical-align: bottom;">casino</i> Merch</a></li>
+        <li><a href="./social.html"><i class="material-icons" style="font-size:18px; vertical-align: bottom;">share</i> Social</a></li>
+        <li><a href="./setup.html"><i class="fa fa-gamepad"></i> Setup</a></li> 
+          
+        <br><li><a href="./about_me.html"><i class="fa fa-address-book-o"></i> About Me</a></li> 
+        <li><a href="./faq.html"><i class="fa fa-diamond"></i> FAQ</a></li>
+          
+        <br><li><a id="Button1"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li class="active"><a href=""><i class="fa fa-cog"></i> Settings</a></li> 
+        <li><a id="Button2" onclick="SignOn()"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>       
+    </div>
+  </div>
+</nav>
+
+<script>
+        function SignOn()
+        {   
+        document.getElementById("Button1").innerHTML = '<span class="glyphicon glyphicon-signal"></span>' + " My Profile";      
+        document.getElementById("Button2").onclick = function()  { SignOff() }
+        document.getElementById("Button2").innerHTML = '<span class="glyphicon glyphicon-log-out"></span>' + " Sign Out";
+        }
+        
+        function SignOff()
+        {
+        document.getElementById("Button1").innerHTML = '<span class="glyphicon glyphicon-user"></span>' + " Sign Up";
+        document.getElementById("Button2").onclick = function()  { SignOn() }
+        document.getElementById("Button2").innerHTML = '<span class="glyphicon glyphicon-log-in"></span>' + " Login";   
+        }
+    </script>
+
+<br><center><p style="font-family: monospace; font-size: 22px;"> Settings! </p></center>    
+    
+</div>            
+</body>
+</html>

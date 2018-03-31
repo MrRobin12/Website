@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Amaranth');
+
 @media only screen 
   and (min-device-width: 320px) 
   and (max-device-width: 767px)
@@ -17,6 +19,11 @@
     background-color: purple;
     background-position: center;
 }
-        
+      
+#myNavbar li a {
+    color: White;
+    font-family: 'Amaranth', sans-serif;
+    font-size: 1.2em;
+}
       
 }
