@@ -41,17 +41,17 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="../index.html"><i class="fa fa-home"></i> Home</a></li>
-        <li><a href="./news.html"><i class="fa fa-newspaper-o"></i> News</a></li>
-        <li><a href="./forums.html"><i class="material-icons" style="font-size:18px; vertical-align: bottom;">forum</i> Forums</a></li>
+        <li><a href="home.html"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="news.html"><i class="fa fa-newspaper-o"></i> News</a></li>
+        <li><a href="forums.html"><i class="material-icons" style="font-size:18px; vertical-align: bottom;">forum</i> Forums</a></li>
         <li class="active"><a href=""><i class="material-icons" style="font-size:18px; vertical-align: bottom;">devices</i> Live</a></li>
           
-        <br><li><a href="./merch.html"><i class="material-icons" style="font-size:18px; vertical-align: bottom;">casino</i> Merch</a></li>
-        <li><a href="./social.html"><i class="material-icons" style="font-size:18px; vertical-align: bottom;">share</i> Social</a></li>
-        <li><a href="./setup.html"><i class="fa fa-gamepad"></i> Setup</a></li> 
+        <br><li><a href="merch.html"><i class="material-icons" style="font-size:18px; vertical-align: bottom;">casino</i> Merch</a></li>
+        <li><a href="social.html"><i class="material-icons" style="font-size:18px; vertical-align: bottom;">share</i> Social</a></li>
+        <li><a href="setup.html"><i class="fa fa-gamepad"></i> Setup</a></li> 
           
-        <br><li><a href="./about_me.html"><i class="fa fa-address-book-o"></i> About Me</a></li> 
-        <li><a href="./faq.html"><i class="fa fa-diamond"></i> FAQ</a></li>
+        <br><li><a href="about_me.html"><i class="fa fa-address-book-o"></i> About Me</a></li> 
+        <li><a href="faq.html"><i class="fa fa-diamond"></i> FAQ</a></li>
           
         <br><li><a id="Button1"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
         <li><a href="./settings.html"><i class="fa fa-cog"></i> Settings</a></li> 
@@ -80,38 +80,11 @@
 <br><center><div id="twitch-embed"></div></center>
 <script src="https://embed.twitch.tv/embed/v1.js"></script>
     
-<center><button id="twButton" onclick="window.location.href='http://www.twitch.tv/mrrobin12ftw/'" style="margin-top: 2px; color:white; background-color: rebeccapurple; border: none; display: inline-block; text-align: center; padding: 8px 90px; font-family: monospace; font-size: 1.2em;"> Open Twitch App</button></center>
-    
-<script>
-var channelID = "UC_vt34wimdCzdkrzVejwX9g";
-var key = "AIzaSyA2Ya3aC_Ly-V5w_kM1-wOL8Os9mwJPVvM";
-var videoID = "";
-var url = "";
-var button = "";
-    
-$.ajax({
-    url: "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=" + channelID + "&eventType=live&type=video&key=" + key,
-    dataType: "text",
-    success: function(data) {
-    var json = $.parseJSON(data);
-    videoID = json.items[0].id.videoId; 
-        
-    url = "https://www.youtube.com/embed/" + videoID + "?autoplay=1";
-    button = "http://www.youtube.com/watch?v=" + videoID;
-    console.log(button);
-        
-    $('#ytplayer').attr("src", url);
-    $('#ytButton').attr("onclick", "window.location.href=" + "'" + button + "'");
-    },
-    error: function(data){
-        
-    }
-});    
-</script>
+<center><button id="twButton" onclick="twitch://mrrobin12ftw/" style="margin-top: 2px; color:white; background-color: rebeccapurple; border: none; display: inline-block; text-align: center; padding: 8px 90px; font-family: monospace; font-size: 1.2em;"> Open Twitch App</button></center>
 
-<br><center><iframe id="ytplayer" width="320" height="240" src="" frameborder="0" allowfullscreen></iframe></center>
+<br><center><iframe src="https://www.youtube.com/embed/live_stream?channel=UCo7UzdjhDSxYqKR0rZnuU4Q" width="320px" height="240px" frameborder="0" ></iframe></center>  
     
-<center><button id="ytButton" onclick="" style="margin-top: 2px; color:white; background-color: red; border: none; display: inline-block; text-align: center; padding: 8px 90px; font-family: monospace; font-size: 1.2em;"> Open YouTube App</button></center>
+<center><button id="ytButton" onclick="youtube://user/robinspelaspel/live" style="margin-top: 2px; color:white; background-color: red; border: none; display: inline-block; text-align: center; padding: 8px 90px; font-family: monospace; font-size: 1.2em;"> Open YouTube App</button></center>
 
 <script type="text/javascript">
       new Twitch.Embed("twitch-embed", {
@@ -123,6 +96,12 @@ $.ajax({
         channel: "mrrobin12ftw"
       });
     </script>
+    
+<style>
+    body {
+        background-color: #121212;
+    }    
+</style>
     
 </div>            
 </body>

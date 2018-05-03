@@ -2,8 +2,17 @@
 <html lang="en">
 
 <script>
-var win = window.open("tabs/index.html", '_self');
-win.focus();     
+if(screen.width >= 800)
+{
+var win = window.open("tabs/desktop/home.html", '_self');
+win.focus();    
+}   
+
+if(screen.width >= 320)
+{
+var win = window.open("tabs/mobile/home.html", '_self');
+win.focus();    
+}  
 </script>
 
 </html>

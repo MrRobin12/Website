@@ -1,14 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Amaranth');
 
-@media screen 
-  and (min-device-width: 800px) 
-  and (max-device-width: 3840px) 
-  and (-webkit-min-device-pixel-ratio: 1) {
-      .mobile { display: none; }
-      .tablet { display: none; }
-      .desktop { display: block; }
-      .social { display: block; }
-
 body {
 	text-align: auto;
     margin: 0;
@@ -18,7 +9,7 @@ body {
 
 #banner {
     width: 100%;
-    background-image: url(images/banners/banner.png);
+    background-image: url(../images/banners/banner.png);
     background-size: cover;
     background-repeat: no-repeat;
     height: 180px;

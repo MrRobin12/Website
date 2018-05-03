@@ -1,17 +1,6 @@
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1080px)
-  and (-webkit-min-device-pixel-ratio: 2) { 
-      .desktop { display: none; }
-      .social { display: none; }
-      .mobile { display: none; }
-      #mobileBar { display: none; }  
-      .tablet { display: block; }
-      #tabletBar { display: block; }  
-      
 #banner {
     width: 100%;
-    background-image: url(images/banners/banner.png);
+    background-image: url(..images/banners/banner.png);
     background-size: cover;
     background-repeat: no-repeat;
     height: 100px;

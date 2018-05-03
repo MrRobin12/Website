@@ -7,23 +7,28 @@
     
     <title>MrRobin12s Hemsida</title>
     
-    <link rel="stylesheet" type="text/css" href="../dekstop_class.css">
+    <link rel="stylesheet" type="text/css" href="dekstop_class.css">  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="../images/icons/Mr%20Web%20Icon.ico">
 </head>    
 <body>          
     
 <div id="banner"></div>
     
-<div class="desktop">
-<link rel="stylesheet" type="text/css" href="../dekstop_class.css">  
+<link rel="stylesheet" type="text/css" href="dekstop_class.css">  
     
 <ul class="topnav">
-        <li><a href="../index.html"><i class="fa fa-home"></i> Home</a></li>
+                <li><a href="home.html"><i class="fa fa-home"></i> Home</a></li>
         <li><a href="#news"><i class="fa fa-newspaper-o"></i> News</a></li>
         <li><a href="#forums"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">forum</i> Forums</a></li>
         <li><a href="./live.html" style="margin-left: 60px"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">devices</i> Live</a></li>
@@ -40,7 +45,7 @@
         <li class="right"><a href="#news"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
     </ul>
  
-<video id="vid" video autobuffer autoplay>
+<video id="vid" fullscreen muted autoplay>
   <source id="mp4" src="../videos/Setup%202018.mp4" type="video/mp4">
 </video>
     
@@ -57,6 +62,11 @@
 var video = document.getElementById("vid");
 video.loop = true;
 video.volume = 0.50;
+
+function window.onload()
+{
+    video.muted = false;
+}
     
 var slider = document.getElementById("myRange");
 var output = document.getElementById("volValue");
@@ -68,6 +78,7 @@ slider.oninput = function() {
     var video = document.getElementById("vid");
     video.volume = this.value / 100;
 }
+
     
 function mute()
 {   
@@ -159,75 +170,6 @@ function unmute()
     }
     
 </style>    
-    
-</div>
-    
-<div class="mobile">  
-    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../mobile_class.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
-    <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span> 
-      </button>
-      <a class="navbar-brand" href="#">MrRobin12's Website</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href=""><i class="fa fa-home"></i> Home</a></li>
-        <li><a href="mobile/news.html"><i class="fa fa-newspaper-o"></i> News</a></li>
-        <li><a href="mobile/forums.html"><i class="material-icons" style="font-size:18px; vertical-align: bottom;">forum</i> Forums</a></li>
-        <li><a href="mobile/live.html"><i class="material-icons" style="font-size:18px; vertical-align: bottom;">devices</i> Live</a></li>
-          
-        <br><li><a href="mobile/merch.html"><i class="material-icons" style="font-size:18px; vertical-align: bottom;">casino</i> Merch</a></li>
-        <li><a href="mobile/social.html"><i class="material-icons" style="font-size:18px; vertical-align: bottom;">share</i> Social</a></li>
-        <li><a href="mobile/setup.html"><i class="fa fa-gamepad"></i> Setup</a></li> 
-          
-        <br><li><a href="mobile/about_me.html"><i class="fa fa-address-book-o"></i> About Me</a></li> 
-        <li><a href="mobile/faq.html"><i class="fa fa-diamond"></i> FAQ</a></li>
-          
-        <br><li><a id="Button1"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li> 
-        <li><a id="Button2" onclick="SignOn()"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>       
-    </div>
-  </div>
-</nav>
-    
-    <script>
-        function SignOn()
-        {   
-        document.getElementById("Button1").innerHTML = '<span class="glyphicon glyphicon-signal"></span>' + " My Profile";      
-        document.getElementById("Button2").onclick = function()  { SignOff() }
-        document.getElementById("Button2").innerHTML = '<span class="glyphicon glyphicon-log-out"></span>' + " Sign Out";
-        }
-        
-        function SignOff()
-        {
-        document.getElementById("Button1").innerHTML = '<span class="glyphicon glyphicon-user"></span>' + " Sign Up";
-        document.getElementById("Button2").onclick = function()  { SignOn() }
-        document.getElementById("Button2").innerHTML = '<span class="glyphicon glyphicon-log-in"></span>' + " Login";   
-        }
-    </script>
-    
-    
-    
-</div>
-    
-<div class="tablet">
-<link rel="stylesheet" type="text/css" href="../tablet_class.css">
-    
-</div>
     
 </body>
 </html>
