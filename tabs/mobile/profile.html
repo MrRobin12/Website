@@ -37,7 +37,7 @@
     </div>
     <div class="collapse navbar-collapse" id="menuBar">
       <ul class="nav navbar-nav">
-        <li><a href=""><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="home.html"><i class="fa fa-home"></i> Home</a></li>
         <li><a href="news.html"><i class="fa fa-newspaper-o"></i> News</a></li>
         <li><a href="forums.html"><i class="material-icons" style="font-size:18px; vertical-align: bottom;">forum</i> Forums</a></li>
         <li><a href="live.html"><i class="material-icons" style="font-size:18px; vertical-align: bottom;">devices</i> Live</a></li>
@@ -46,13 +46,13 @@
         <li><a href="social.html"><i class="material-icons" style="font-size:18px; vertical-align: bottom;">share</i> Social</a></li>
         <li><a href="setup.html"><i class="fa fa-gamepad"></i> Setup</a></li> 
           
-        <br><li class="active"><a href="about_me.html"><i class="fa fa-address-book-o"></i> About Me</a></li> 
+        <br><li><a href="about_me.html"><i class="fa fa-address-book-o"></i> About Me</a></li> 
         <li><a href="faq.html"><i class="fa fa-diamond"></i> FAQ</a></li>
       </ul>       
     </div>
     <div class="collapse navbar-collapse" id="profileBar">
         <ul class="nav navbar-nav">
-        <li><a id="Button2" onclick="SignOn()" style="color:white;"><span class="glyphicon glyphicon-log-in"></span> Login In</a></li>
+        <li class="active"><a id="Button2" onclick="SignOn()" style="color:white;"><span class="glyphicon glyphicon-log-in"></span> Login In</a></li>
         <li><a href="settings.html" style="color:white;"><i class="fa fa-cog"></i> Settings</a></li> 
         <li><a id="Button1" style="color:white;"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       </ul>       
@@ -90,9 +90,96 @@ else
     document.getElementById("Button2").innerHTML = '<span class="glyphicon glyphicon-log-in"></span>' + " Login";  
     }
 }
-</script>     
+</script>
+
+<center><div>
     
-<br><center><p style="font-family: monospace; font-size: 22px;"> About Me! </p></center>    
-           
+<br><p style="font-family: monospace; font-size: 22px; color:white;"> My Profile </p>
+
+<br><div class="profile-img">
+    <img src="../images/icons/Mr%20Purple%20Logo.png" style="width: 50%; height: 50%; border-radius: 120px; border-style: solid; border-width: 2px; border-color: white;"><br>
+    <div class="overlay">
+        <div class="text">Edit image</div>
+    </div>
+</div>    
+    
+<br><p style="font-family: monospace; font-size: 22px; color:white;" >MrRobin12</p>   
+    
+<br><center><table>
+    <tr>
+        <th>LOGIN DETAILS</th>
+        <td><a id="profile_login_count"></a></td>
+        <td><a id="profile_login_timer"></a></td>
+    </tr>
+</table></center>
+    
+</div></center>
+    
+<script>
+document.getElementById("profile_login_count").innerHTML = "Logins: " + localStorage.clickcount + " times";    
+document.getElementById("profile_login_timer").innerHTML = "Last login time: " + localStorage.getItem("lastTime");
+</script>
+          
+<style>
+    body {
+        background-color: #121212;
+    }
+    
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    a {
+        color: white;
+    }
+    
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: center;
+        padding: 8px;
+        font-size: 1em;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #1c1c1c;
+    }
+    
+    .overlay {
+        position: absolute;
+        top: 32%;
+        bottom: 0;
+        left: 26%;
+        right: 0;
+        height: 23%;
+        width: 48%;
+        border-radius: 120px;
+        opacity: 0;
+        transition: .5s ease;
+        background-color: black;
+    }
+
+    .profile-img:hover .overlay {
+        opacity: .75;
+    }
+    
+    .profile-img:hover::after .overlay {
+        opacity: 0;
+    }
+
+    .text {
+        color: white;
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        text-align: center;
+    }
+</style>    
+    
 </body>
 </html>

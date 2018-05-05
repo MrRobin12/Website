@@ -2,45 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="google" value="notranslate">
     
     <title>MrRobin12s Hemsida</title>
     
-    <link rel="stylesheet" type="text/css" href="mobile_class.css">  
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="scripts/navibar_javascript.js"></script>
-    <script src="scripts/tablet_overlay.js"></script>
-
+    <link rel="stylesheet" type="text/css" href="mobile_class.css"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="../images/icons/Mr%20Web%20Icon.ico">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="login_script.js"></script>
 </head>    
 <body>
     
 <div id="banner"></div>
+<link rel="stylesheet" href="bootstrap.min.css">  
 
-   <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="mobile_class.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
-    <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menuBar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span> 
       </button>
-      <a class="navbar-brand" href="#">MrRobin12's Website</a>
+        <button class="navbar-toggle" style="color:white;" data-toggle="collapse" data-target="#profileBar"><span class="glyphicon glyphicon-user"></span></button>
+        <a id="lastTime_active" class="navbar-brand">Last login time: </a>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
+    <div class="collapse navbar-collapse" id="menuBar">
       <ul class="nav navbar-nav">
         <li class="active"><a href=""><i class="fa fa-home"></i> Home</a></li>
         <li><a href="news.html"><i class="fa fa-newspaper-o"></i> News</a></li>
@@ -53,32 +48,60 @@
           
         <br><li><a href="about_me.html"><i class="fa fa-address-book-o"></i> About Me</a></li> 
         <li><a href="faq.html"><i class="fa fa-diamond"></i> FAQ</a></li>
-          
-        <br><li><a id="Button1"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li> 
-        <li><a id="Button2" onclick="SignOn()"><span class="glyphicon glyphicon-log-in"></span> Login In</a></li>
+      </ul>       
+    </div>
+    <div class="collapse navbar-collapse" id="profileBar">
+        <ul class="nav navbar-nav">
+        <li><a id="Button2" onclick="SignOn(); login_in(); SetTime();" style="color:white;"><span class="glyphicon glyphicon-log-in"></span> Login In</a></li>
+        <li><a href="settings.html" style="color:white;"><i class="fa fa-cog"></i> Settings</a></li> 
+        <li><a id="Button1" style="color:white;"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       </ul>       
     </div>
   </div>
 </nav>
     
-    <script>
-        function SignOn()
-        {   
-        document.getElementById("Button1").innerHTML = '<span class="glyphicon glyphicon-signal"></span>' + " My Profile";      
-        document.getElementById("Button2").onclick = function()  { SignOff() }
-        document.getElementById("Button2").innerHTML = '<span class="glyphicon glyphicon-log-out"></span>' + " Sign Out";
-        }
-        
-        function SignOff()
-        {
-        document.getElementById("Button1").innerHTML = '<span class="glyphicon glyphicon-user"></span>' + " Sign Up";
-        document.getElementById("Button2").onclick = function()  { SignOn() }
-        document.getElementById("Button2").innerHTML = '<span class="glyphicon glyphicon-log-in"></span>' + " Login";   
-        }
-    </script>
+<script>
+if (localStorage.getItem("isLogin") == "true")
+{
+    document.getElementById("Button2").innerHTML = '<span class="glyphicon glyphicon-signal"></span>' + " My Profile";       document.getElementById("Button2").onclick = function()  { myProfile(); }   
+    document.getElementById("Button1").onclick = function()  { SignOff(); sign_out();}
+    document.getElementById("Button1").innerHTML = '<span class="glyphicon glyphicon-log-out"></span>' + " Sign Out"; 
     
-      
+    function SignOff()
+    {
+    document.getElementById("Button2").innerHTML = '<span class="glyphicon glyphicon-user"></span>' + " Sign Up";
+    document.getElementById("Button1").onclick = function()  { SignOn() }
+    document.getElementById("Button2").innerHTML = '<span class="glyphicon glyphicon-log-in"></span>' + " Login";  
+    }
+}
+else
+{  
+    function SignOn()
+    {
+    document.getElementById("Button2").innerHTML = '<span class="glyphicon glyphicon-signal"></span>' + " My Profile";   
+    document.getElementById("Button2").onclick = function()  { myProfile(); }  
+    document.getElementById("Button1").onclick = function()  { SignOff(); sign_out(); }
+    document.getElementById("Button1").innerHTML = '<span class="glyphicon glyphicon-log-out"></span>' + " Sign Out";   
+    }
+    
+    function SignOff()
+    {
+    document.getElementById("Button2").innerHTML = '<span class="glyphicon glyphicon-user"></span>' + " Sign Up";
+    document.getElementById("Button1").onclick = function()  { SignOn() }
+    document.getElementById("Button2").innerHTML = '<span class="glyphicon glyphicon-log-in"></span>' + " Login";  
+    }
+}
+</script>    
+<script>  
+    
+function SetTime()
+{
+var date = new Date();
+localStorage.setItem("lastTime", date.getFullYear() + "-" + date.getDate() + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes());
+}
+    
+document.getElementById("lastTime_active").innerHTML = "Last login time: " + localStorage.getItem("lastTime");
+</script>
          
 </body>
 </html>

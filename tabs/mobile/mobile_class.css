@@ -10,7 +10,13 @@
     background-position: center;
 }
       
-#myNavbar li a {
+#menuBar li a {
+    color: White;
+    font-family: 'Amaranth', sans-serif;
+    font-size: 1.2em;
+}
+
+#profileBar li a {
     color: White;
     font-family: 'Amaranth', sans-serif;
     font-size: 1.2em;
