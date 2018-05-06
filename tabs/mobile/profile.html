@@ -35,6 +35,13 @@
         <button class="navbar-toggle" style="color:white;" data-toggle="collapse" data-target="#profileBar"><span class="glyphicon glyphicon-user"></span></button>
         <a id="lastTime_active" class="navbar-brand">MrRobin12's Website </a>
     </div>
+    <div class="collapse navbar-collapse" id="profileBar">
+        <ul class="nav navbar-nav">
+        <li class="active"><a id="Button2" onclick="SignOn()" style="color:white;"><span class="glyphicon glyphicon-log-in"></span> Login In</a></li>
+        <li><a href="settings.html" style="color:white;"><i class="fa fa-cog"></i> Settings</a></li> 
+        <li><a id="Button1" style="color:white;"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      </ul>       
+    </div>
     <div class="collapse navbar-collapse" id="menuBar">
       <ul class="nav navbar-nav">
         <li><a href="home.html"><i class="fa fa-home"></i> Home</a></li>
@@ -48,13 +55,6 @@
           
         <br><li><a href="about_me.html"><i class="fa fa-address-book-o"></i> About Me</a></li> 
         <li><a href="faq.html"><i class="fa fa-diamond"></i> FAQ</a></li>
-      </ul>       
-    </div>
-    <div class="collapse navbar-collapse" id="profileBar">
-        <ul class="nav navbar-nav">
-        <li class="active"><a id="Button2" onclick="SignOn()" style="color:white;"><span class="glyphicon glyphicon-log-in"></span> Login In</a></li>
-        <li><a href="settings.html" style="color:white;"><i class="fa fa-cog"></i> Settings</a></li> 
-        <li><a id="Button1" style="color:white;"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       </ul>       
     </div>
   </div>
@@ -96,12 +96,11 @@ else
     
 <br><p style="font-family: monospace; font-size: 22px; color:white;"> My Profile </p>
 
-<br><div class="profile-img">
-    <img src="../images/icons/Mr%20Purple%20Logo.png" style="width: 50%; height: 50%; border-radius: 120px; border-style: solid; border-width: 2px; border-color: white;"><br>
-    <div class="overlay">
-        <div class="text">Edit image</div>
-    </div>
-</div>    
+<a id="img">
+    <div id="edit-overlay"></div>
+    <div id="img__overlay" onclick="overlay();"></div>
+    <img src="../images/icons/Mr%20Purple%20Logo.png"/>
+</a>
     
 <br><p style="font-family: monospace; font-size: 22px; color:white;" >MrRobin12</p>   
     
@@ -119,7 +118,19 @@ else
 document.getElementById("profile_login_count").innerHTML = "Logins: " + localStorage.clickcount + " times";    
 document.getElementById("profile_login_timer").innerHTML = "Last login time: " + localStorage.getItem("lastTime");
 </script>
-          
+       
+<script>
+function edit_image()
+{    
+    window.open('home.html','_self')
+}
+    
+function overlay()
+{
+    document.getElementById("img__overlay").innerHTML = '<button class="edit-image" onclick="edit_image();">Edit image</button>';
+}
+</script>    
+    
 <style>
     body {
         background-color: #121212;
@@ -145,40 +156,65 @@ document.getElementById("profile_login_timer").innerHTML = "Last login time: " +
 
     tr:nth-child(even) {
         background-color: #1c1c1c;
+    } 
+    
+    #img {
+        border-radius: 100%;
+        display: flex;
+        flex: 0 0 150px;
+        height: 150px;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+        width: 150px;
+        border-width: 2px;
+        border-style: solid;
+        border-color: white;
+    }   
+    
+    #img img {
+        height: 100%;
     }
     
-    .overlay {
-        position: absolute;
-        top: 32%;
+    #img__overlay {
+        align-items: center;
         bottom: 0;
-        left: 26%;
-        right: 0;
-        height: 23%;
-        width: 48%;
-        border-radius: 120px;
+        display: flex;
+        justify-content: center;
+        left: 0;
         opacity: 0;
-        transition: .5s ease;
-        background-color: black;
-    }
-
-    .profile-img:hover .overlay {
-        opacity: .75;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: opacity 0.25s;
+        z-index: 1;
+        color: white;
+        background-color: rgba(0,0,0,0.5);
+        font-size: 1.2em;
     }
     
-    .profile-img:hover::after .overlay {
-        opacity: 0;
+    #img__overlay:hover {
+        opacity: 1;
     }
-
-    .text {
+    
+    .edit-image {
+        display: inline-block;
+        background: transparent;
+        color: lightgray;
+        -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+        -moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+        -o-transition: background .2s ease-in-out, border .2s ease-in-out;
+        transition: background .2s ease-in-out, border .2s ease-in-out;
+        border: 2px solid #4992B7;
+    }
+    
+    .edit-image:hover {
         color: white;
-        font-size: 20px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        text-align: center;
+        background-color: rgba(255,255,255,0.25);
     }
+    
+    .edit-image:focus {outline:0;}
+    
 </style>    
     
 </body>
