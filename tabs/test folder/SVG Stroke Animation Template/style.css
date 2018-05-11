@@ -1,0 +1,54 @@
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width; 100%;
+    text-align: center;
+    background: url(https://wallpapersite.com/images/pages/pic_h/162.jpg);
+    background-size: cover;
+    height: 100vh;
+    display: table;
+}
+
+.wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+path {
+    stroke: white;
+    fill: white;
+    stroke-dasharray: 1800;
+    animation: animate 3s cubic-bezier(0, 0.23, 1, .1);
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+        fill: none;
+        stroke-dashoffset: 1800;
+    }
+    
+    30% {
+        opacity: 10;
+        fill: none;
+        stroke-dashoffset: 1800;
+    }
+    
+    90% {
+        fill: rgba(255, 255, 255, 0);
+    }
+    
+    100% {
+        opacity: 10;
+        fill: rgba/255, 255, 255, 1);
+        stroke-dashoffset: 1800;
+    }
+}

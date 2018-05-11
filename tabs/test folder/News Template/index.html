@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="google" value="notranslate">
+    <title>MrRobin12s Hemsida</title>	
+    <link rel="stylesheet" type="text/css" href="style.css">  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>    
+<body>          
+    
+<section>
+
+<div id="uploads"></div>
+<div><div class="dropIMG" id="dropIMG">Drop image files here!</div> 
+    
+<br><div id="box"><div class="dropTXT" id="dropTXT">Drop text files here!</div></div>
+<pre id="fileDisplayArea"></pre>
+    
+<script>
+(function() {
+    var dropzone = document.getElementById('dropTXT');
+    var text;
+    
+    dropzone.ondrop = function (e) {
+        e.preventDefault();  
+        this.className = 'dropTXT';
+        var file = e.dataTransfer.files[0];
+        var textType = /text.*/;
+
+        if (file.type.match(textType)) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                text = reader.result;
+                
+                if (text.length >= 1220) {
+                    alert("Text file was too big! Only 1220 characters!");
+                }
+                else {
+                    document.getElementById('dropTXT').innerHTML = text;
+                }
+            }
+
+            reader.readAsText(file);	
+			}
+    };
+    
+    dropzone.ondragover = function () {
+        this.className = 'dropTXT dragover';
+        return false;
+    };
+    
+    dropzone.ondragleave = function () {
+        this.className = 'dropTXT';
+        return false;
+    };
+    
+}());
+    
+(function() {
+    var dropzone = document.getElementById('dropIMG');
+    
+    dropzone.ondrop = function (e) {
+        e.preventDefault();  
+        this.className = 'dropIMG';
+    };
+    
+    dropzone.ondragover = function () {
+        this.className = 'dropIMG dragover';
+        return false;
+    };
+    
+    dropzone.ondragleave = function () {
+        this.className = 'dropIMG';
+        return false;
+    };
+    
+}());    
+</script>
+    
+</div>
+</section>
+    
+</body>
+</html>

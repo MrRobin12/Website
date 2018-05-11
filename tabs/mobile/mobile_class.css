@@ -1,14 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Amaranth');
-      
-#banner {
-    width: 100%;
-    background-image: url(../images/banners/banner.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100px;
-    background-color: purple;
-    background-position: center;
-}
+
       
 #menuBar li a {
     color: White;

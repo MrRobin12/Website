@@ -7,44 +7,86 @@
     
     <title>MrRobin12s Hemsida</title>
     
-    <link rel="stylesheet" type="text/css" href="dekstop_class.css">  
+    <link rel="stylesheet" type="text/css" href="dekstop_class.css"> 
+    <link rel="stylesheet" type="text/css" href="../universal/banner_class.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="scripts/navibar_javascript.js"></script>
+    <script src="user-menu.js"></script>
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="shortcut icon" href="../images/icons/Mr%20Web%20Icon.ico">
+    
+    <link rel="stylesheet" href="parallax_effect.css">
 </head>    
 <body>
     
-<div id="banner"></div>
-    
-<link rel="stylesheet" type="text/css" href="dekstop_class.css">  
-    
-    <ul class="topnav">
+<div id="banner-desktop"></div><br><br><br><br><br><br><br><br>
+<ul class="topnav">
         <li><a class="active" href=""><i class="fa fa-home"></i> Home</a></li>
-        <li><a href="#news"><i class="fa fa-newspaper-o"></i> News</a></li>
-        <li><a href="#forums"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">forum</i> Forums</a></li>
+        <li><a href="news.html"><i class="fa fa-newspaper-o"></i> News</a></li>
+        <li><a href="forums.html"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">forum</i> Forums</a></li>
         <li><a href="live.html" style="margin-left: 60px"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">devices</i> Live</a></li>
         
-        <li><a href="#news"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">casino</i> Merch</a></li>
-        <li><a href="#news"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">share</i> Social</a></li>
+        <li><a href="merch.html"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">casino</i> Merch</a></li>
+        <li><a href="social.html"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">share</i> Social</a></li>
         
         <li><a href="setup.html" style="margin-left: 60px"><i class="fa fa-gamepad"></i> Setup</a></li>  
-        <li><a href="#news"><i class="fa fa-address-book-o"></i> About Me</a></li>
-        <li><a href="#news"><i class="fa fa-diamond"></i> FAQ</a></li>
-        
-        <li class="right"><a href="#about"><span class="glyphicon glyphicon-log-in"></span> Login In</a></li>
-        <li class="right"><a href="#contact"><i class="fa fa-cog"></i> Settings</a></li>
-        <li class="right"><a href="#news"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-    </ul>
+        <li><a href="about_me.html"><i class="fa fa-address-book-o"></i> About Me</a></li>
+        <li><a href="faq.html"><i class="fa fa-diamond"></i> FAQ</a></li>
     
-         
+        <li class="right" id="menu-button"><a onclick="user_menu();" style="background-color: none;"><i class="material-icons">menu</i></a></li>
+    
+        <li class="right; user-menu" id="user-menu1" style="opacity: 0; padding-left: 132px;"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login In</a></li>
+        <li class="right; user-menu" id="user-menu2" style="opacity: 0;"><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+        <li class="right; user-menu" id="user-menu3" style="opacity: 0;"><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+    </ul>
+
+<header>     
+    
+<center>
+<p>Fortnite is the shit!</p>    
+    
+<video class="preview" preload="auto" autoplay="autoplay" muted="muted" loop="loop" webkit-playsinline="" style="width: 1280px; height: 720px; cursor: none;"><source src="https://media.giphy.com/media/2hgwvqribydBxiPddb/giphy.mp4" type="video/mp4"></video>
+</center>
+ 
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>       
+</header>
+ 
+<style>
+    .preview {
+        opacity: .80;
+        border: 5px dotted rgba(255, 255, 255, .25);
+    }
+    
+    .topnav {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+    
+    #banner-desktop {
+        position: absolute;
+        top: 0;
+        z-index: 1;
+    }
+</style>
+<style>
+    body {
+        background-color: rgb(24, 24, 24);
+    }
+    
+    #bar {
+        width: 35px;
+        height: 5px;
+        background-color: white;
+        margin: 6px 0;
+    }
+</style>
+           
 </body>
 </html>
