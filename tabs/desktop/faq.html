@@ -43,5 +43,24 @@
         <li class="right"><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
 </ul>
     
+<script>
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.fortnitetracker.com/v1/profile/pc/mrrobin123",
+  "method": "GET",
+  "headers": {
+    "trn-api-key": "f99edc6e-0930-43d3-82ea-3a824d15ea99",
+    "access-control-allow-methods": "GET",
+    "cache-control": "no-cache",
+    "postman-token": "c37fa146-6165-7112-21c8-ae5a25469cf6"
+  }
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});    
+</script>
+    
 </body>
 </html>
