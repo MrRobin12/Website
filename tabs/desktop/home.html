@@ -22,6 +22,12 @@
     <link rel="shortcut icon" href="../images/icons/Mr%20Web%20Icon.ico">
     
     <link rel="stylesheet" href="parallax_effect.css">
+    <link rel="stylesheet" href="magnific.css">
+    <link rel="stylesheet" type="text/css" href="images_instagram_style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    
+    <script src="../universal/automatic_detect_screen.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>    
 <body>
     
@@ -39,7 +45,7 @@
         <li><a href="about_me.html"><i class="fa fa-address-book-o"></i> About Me</a></li>
         <li><a href="faq.html"><i class="fa fa-diamond"></i> FAQ</a></li>
     
-        <li class="right" id="menu-button"><a onclick="user_menu();" style="background-color: none;"><i class="material-icons">menu</i></a></li>
+        <li class="right" id="menu-button" style="color:White;"><a onclick="user_menu();" style="background-color: none;"><i class="material-icons">menu</i></a></li>
     
         <li class="right; user-menu" id="user-menu1" style="opacity: 0; padding-left: 132px;"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login In</a></li>
         <li class="right; user-menu" id="user-menu2" style="opacity: 0;"><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
@@ -49,12 +55,24 @@
 <header>     
     
 <center>
-<p>Fortnite is the shit!</p>    
+<p style="color:white">Fortnite is the shit!</p>    
     
 <video class="preview" preload="auto" autoplay="autoplay" muted="muted" loop="loop" webkit-playsinline="" style="width: 1280px; height: 720px; cursor: none;"><source src="https://media.giphy.com/media/2hgwvqribydBxiPddb/giphy.mp4" type="video/mp4"></video>
-</center>
  
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>       
+<div class="container">
+    <center><h1 class="insta-text">Instagram Feed</h1></center>
+    <div id="instafeed" class="row"></div>
+</div>
+    
+</center>
+    
+<script src="instafeed.min.js"></script>
+<script src="instafeed_custom.js"></script>
+<script src="magnific.min.js"></script>
+ 
+<div class="linebreak">
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>     
+</div>      
 </header>
  
 <style>
@@ -74,6 +92,12 @@
         top: 0;
         z-index: 1;
     }
+    
+    .linebreak {
+        display: block;
+        margin: 10px 0;
+        line-height: 500px;
+    }
 </style>
 <style>
     body {
@@ -85,6 +109,10 @@
         height: 5px;
         background-color: white;
         margin: 6px 0;
+    }
+    
+    header {
+        margin-top: -60vh;
     }
 </style>
            
