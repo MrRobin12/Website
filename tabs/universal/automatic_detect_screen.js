@@ -1,7 +1,5 @@
-var url = document.URL;
-var width = screen.width;
-var height = screen.height;
 
+<<<<<<< HEAD
 window.onload = function() {
     localStorage.setItem("update", "0");
 }
@@ -35,3 +33,5 @@ if (localStorage.getItem("update") == "0") {
 
 
 }
+=======
+>>>>>>> fdc0935807738182ab9b3f17aa63ec8776a19e7a
