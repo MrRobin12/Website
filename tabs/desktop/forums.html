@@ -23,33 +23,40 @@
     
     <script src="../universal/automatic_detect_screen.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <script src="../universal/fortnite_stats.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Amarante" rel="stylesheet">
 </head>    
 <body>          
     
 <div id="banner-desktop"></div>    
 <ul class="topnav">
-        <li><a href="home"><i class="fa fa-home"></i> Home</a></li>
-        <li><a href="news"><i class="fa fa-newspaper-o"></i> News</a></li>
-        <li><a class="active" href=""><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">forum</i> Forums</a></li>
-        <li><a href="live" style="margin-left: 60px"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">devices</i> Live</a></li>
-        
-        <li><a href="merch"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">casino</i> Merch</a></li>
-        <li><a href="social"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">share</i> Social</a></li>
-        
-        <li><a href="setup" style="margin-left: 60px"><i class="fa fa-gamepad"></i> Setup</a></li>  
-        <li><a href="about_me"><i class="fa fa-address-book-o"></i> About Me</a></li>
-        <li><a href="faq"><i class="fa fa-diamond"></i> FAQ</a></li>
-        
-        <li class="right" id="menu-button" style="color:White;"><a onclick="user_menu();" style="background-color: none;"><i class="material-icons">menu</i></a></li>
+        <li id="notDraggable1"><a href="home"><i class="fa fa-home"></i> Home</a></li>
+        <li id="notDraggable2"><a href="news"><i class="fa fa-newspaper-o"></i> News</a></li>
+        <li id="notDraggable3"><a class="active"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">forum</i> Forums</a></li>
     
-        <li class="right; user-menu" id="user-menu1" style="opacity: 0; padding-left: 132px;"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login In</a></li>
-        <li class="right; user-menu" id="user-menu2" style="opacity: 0;"><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-        <li class="right; user-menu" id="user-menu3" style="opacity: 0;"><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-</ul>
+        <li id="notDraggable4"><a href="live" style="margin-left: 40px"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">devices</i> Live</a></li>
+        <li id="notDraggable5"><a href="merch"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">casino</i> Merch</a></li>
+        <li id="notDraggable6"><a href="social"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">share</i> Social</a></li>
+        
+        <li id="notDraggable7"><a href="downloads" style="margin-left: 40px"><i class="fa fa-download"></i> Downloads</a></li>  
+        <li id="notDraggable8"><a href="setup"><i class="fa fa-gamepad"></i> Setup</a></li>  
+        <li id="notDraggable9"><a href="about_me"><i class="fa fa-address-book-o"></i> About Me</a></li>
+        <li id="notDraggable10"><a href="faq"><i class="fa fa-diamond"></i> FAQ</a></li>
+    
+        <li class="right" style="color:White;"><a><i class="material-icons">menu</i></a>
+        <li class="right" id="menu-button" style="color:White;"><a onclick="user_menu();" style="background-color: none;"><span class="glyphicon glyphicon-user"></span></a></li>
+    
+        <li class="right; user-menu" id="user-menu1" style="opacity: 0; margin-left: 32px;"><a id="notDraggable11" style="font-size: 1em;" href="#"><span class="glyphicon glyphicon-log-in"></span> Login In</a></li>
+        <li class="right; user-menu" id="user-menu2" style="opacity: 0;"><a id="notDraggable12" style="font-size: 1em;" href="settings"><i class="fa fa-cog"></i> Settings</a></li>
+        <li class="right; user-menu" id="user-menu3" style="opacity: 0;"><a id="notDraggable13" style="font-size: 1em;" href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+    </ul>
     
 <div>
     
 </div>
+ 
+<script src="../universal/menu_bar.js"></script>        
     
 </body>
 </html>

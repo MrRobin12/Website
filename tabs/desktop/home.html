@@ -28,39 +28,70 @@
     
     <script src="../universal/automatic_detect_screen.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <script src="../universal/fortnite_stats.js"></script>
+    <script src="../universal/youtube_stats.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Amarante" rel="stylesheet">
+    
+    <script src="../universal/weather.js"></script>
+    <link href="../universal/weather_style.css">
 </head>    
-<body>
+<body onload="Load_API(); Load_API2(); Load_API3(); updateText(); updateText2(); updateText3();">
     
 <div id="banner-desktop"></div><br><br><br><br><br><br><br><br>
 <ul class="topnav">
-        <li><a class="active" href=""><i class="fa fa-home"></i> Home</a></li>
-        <li><a href="news"><i class="fa fa-newspaper-o"></i> News</a></li>
-        <li><a href="forums"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">forum</i> Forums</a></li>
-        <li><a href="live" style="margin-left: 60px"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">devices</i> Live</a></li>
-        
-        <li><a href="merch"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">casino</i> Merch</a></li>
-        <li><a href="social"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">share</i> Social</a></li>
-        
-        <li><a href="setup" style="margin-left: 60px"><i class="fa fa-gamepad"></i> Setup</a></li>  
-        <li><a href="about_me"><i class="fa fa-address-book-o"></i> About Me</a></li>
-        <li><a href="faq"><i class="fa fa-diamond"></i> FAQ</a></li>
+        <li id="notDraggable1"><a class="active" href=""><i class="fa fa-home"></i> Home</a></li>
+        <li id="notDraggable2"><a href="news"><i class="fa fa-newspaper-o"></i> News</a></li>
+        <li id="notDraggable3"><a href="forums"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">forum</i> Forums</a></li>
     
-        <li class="right" id="menu-button" style="color:White;"><a onclick="user_menu();" style="background-color: none;"><i class="material-icons">menu</i></a></li>
+        <li id="notDraggable4"><a href="live" style="margin-left: 40px"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">devices</i> Live</a></li>
+        <li id="notDraggable5"><a href="merch"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">casino</i> Merch</a></li>
+        <li id="notDraggable6"><a href="social"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">share</i> Social</a></li>
+        
+        <li id="notDraggable7"><a href="downloads" style="margin-left: 40px"><i class="fa fa-download"></i> Downloads</a></li>  
+        <li id="notDraggable8"><a href="setup"><i class="fa fa-gamepad"></i> Setup</a></li>  
+        <li id="notDraggable9"><a href="about_me"><i class="fa fa-address-book-o"></i> About Me</a></li>
+        <li id="notDraggable10"><a href="faq"><i class="fa fa-diamond"></i> FAQ</a></li>
     
-        <li class="right; user-menu" id="user-menu1" style="opacity: 0; padding-left: 132px;"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login In</a></li>
-        <li class="right; user-menu" id="user-menu2" style="opacity: 0;"><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-        <li class="right; user-menu" id="user-menu3" style="opacity: 0;"><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li class="right" style="color:White;"><a><i class="material-icons">menu</i></a>
+        <li class="right" id="menu-button" style="color:White;"><a onclick="user_menu();" style="background-color: none;"><span class="glyphicon glyphicon-user"></span></a></li>
+    
+        <li class="right; user-menu" id="user-menu1" style="opacity: 0; margin-left: 32px;"><a id="notDraggable11" style="font-size: 1em;" href="#"><span class="glyphicon glyphicon-log-in"></span> Login In</a></li>
+        <li class="right; user-menu" id="user-menu2" style="opacity: 0;"><a id="notDraggable12" style="font-size: 1em;" href="settings"><i class="fa fa-cog"></i> Settings</a></li>
+        <li class="right; user-menu" id="user-menu3" style="opacity: 0;"><a id="notDraggable13" style="font-size: 1em;" href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
     </ul>
 
-<header>     
+<header>  
+    
+<div>
+    <p id="weather" style="color: white; margin-left: 80%;"></p>
+    <p style="color: white; margin-left: 80%; font-size: 0.5em; text-align: center; margin-top: -100px; line-height: 20px;">Kristianstad, Skåne <br> Sverige</p>    
+</div>
+    
+<div id="fortnite_stats"></div><br><br><br><br><br><br><br><br><br><br>
     
 <center>
-<p style="color:white">FORTNITE IS THE SHIT!</p>    
+<p id="notDraggable14" style="color:white; font-family: 'Amarante', cursive;">FORTNITE IS THE SHIT!</p>    
     
-<video class="preview" preload="auto" autoplay="autoplay" muted="muted" loop="loop" webkit-playsinline="" style="width: 1280px; height: 720px; cursor: none;"><source src="https://media.giphy.com/media/2hgwvqribydBxiPddb/giphy.mp4" type="video/mp4"></video>
+<video id="notDraggable20" class="preview" preload="auto" autoplay="autoplay" muted="muted" loop="loop" webkit-playsinline="" style="width: 1280px; height: 720px; cursor: none;"><source src="https://media.giphy.com/media/2hgwvqribydBxiPddb/giphy.mp4" type="video/mp4"></video>
  
-<div class="container">
-    <center><h1 class="insta-text">Instagram Feed</h1></center>
+<div class="youtube" id="notDraggable21" style="margin-top: 120px; margin-bottom: -420px;">
+    <h1 style="color: white;"><strong>YouTube - MrRobin12</strong></h1>
+    <h1 style="color: white; text-decoration: underline; margin-top: -140px;"><strong>_____________________________</strong></h1>
+    
+    <iframe id="youtube-stats_video0" width="888" height="500" style="transform: translate(0%, 10%);" src="http://www.youtube.com/embed/zTbq5HGc5EY?enablejsapi=1&amp&rel=0;origin=http://www.mrrobin12.github.io/website/" frameborder="1" allowfullscreen></iframe>  
+    
+    <br><img class="youtube-videos" onclick="select_video1();" id="youtube-stats_video1" width="120" height="68" style="transform: translate(460%, -625%);" src=""><br>
+    <img class="youtube-videos" onclick="select_video2();" id="youtube-stats_video2" width="120" height="68" style="transform: translate(460%, -575%);" src="" ><br> 
+    <img class="youtube-videos" onclick="select_video3();" id="youtube-stats_video3" width="120" height="68" style="transform: translate(460%, -537%);" src="" ><br>
+    <img class="youtube-videos" onclick="select_video4();" id="youtube-stats_video4" width="120" height="68" style="transform: translate(460%, -500%);" src="" ><br>
+    <img class="youtube-videos" onclick="select_video5();" id="youtube-stats_video5" width="120" height="68" style="transform: translate(460%, -450%);" src="" ><br>
+    
+    <h1 style="color: white; text-decoration: underline; margin-top: -180px;"><strong>_____________________________</strong></h1><br>
+</div><br><br><br>
+    
+<div class="container" id="notDraggable22">
+    <center><h1 class="insta-text" style="font-family: 'Amarante', cursive; margin-bottom: -320px;">Instagram Feed</h1></center>
     <div id="instafeed" class="row"></div>
 </div>
     
@@ -74,7 +105,24 @@
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>     
 </div>      
 </header>
- 
+     
+<style>
+    #fortnite_stats {
+        position: absolute;
+        margin-top: 25px;
+        right: 0;
+        font-family: 'Amarante', cursive;
+        user-select: none; 
+        text-align: right;
+        margin-right: 45px;
+        font-size: 0.58em;
+        color: white;      
+    }
+    
+    #title:hover {
+        cursor: pointer;
+    }
+</style>
 <style>
     .preview {
         opacity: .80;
@@ -91,6 +139,10 @@
         display: block;
         margin: 10px 0;
         line-height: 500px;
+    }
+    
+    a {
+        user-select: none; 
     }
 </style>
 <style>
@@ -110,5 +162,10 @@
     }
 </style>
            
+<script src="../universal/menu_bar.js"></script>
+<script>
+    
+</script>
+    
 </body>
 </html>

@@ -2,101 +2,89 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <meta name="google" value="notranslate">
     
     <title>MrRobin12s Hemsida</title>
     
-    <link rel="stylesheet" type="text/css" href="mobile_class.css">
-    <link rel="stylesheet" type="text/css" href="../universal/banner_class.css"> 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    
+    <link rel="stylesheet" type="text/css" href="dekstop_class.css"> 
+    <link rel="stylesheet" type="text/css" href="../universal/banner_class.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="shortcut icon" href="../images/icons/Mr%20Web%20Icon.ico">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="login_script.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="user-menu.js"></script>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="shortcut icon" href="../images/icons/Mr%20Web%20Icon.ico">
+    
+    <link rel="stylesheet" href="parallax_effect.css">
+    <link rel="stylesheet" href="magnific.css">
+    <link rel="stylesheet" type="text/css" href="images_instagram_style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
     
     <script src="../universal/automatic_detect_screen.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>    
 <body>
     
-<div id="banner-mobile"></div>
-<link rel="stylesheet" href="bootstrap.min.css">  
-
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menuBar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span> 
-      </button>
-        <button class="navbar-toggle" style="color:white;" data-toggle="collapse" data-target="#profileBar"><span class="glyphicon glyphicon-user"></span></button>
-        <a id="lastTime_active" class="navbar-brand">MrRobin12's Website </a>
-    </div>
-    <div class="collapse navbar-collapse" id="profileBar">
-        <ul class="nav navbar-nav">
-        <li><a id="Button2" onclick="SignOn()" style="color:white;"><span class="glyphicon glyphicon-log-in"></span> Login In</a></li>
-        <li class="active"><a href="" style="color:white;"><i class="fa fa-cog"></i> Settings</a></li> 
-        <li><a id="Button1" style="color:white;"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      </ul>       
-    </div>
-    <div class="collapse navbar-collapse" id="menuBar">
-      <ul class="nav navbar-nav">
-        <li><a href="home"><i class="fa fa-home"></i> Home</a></li>
+<div id="banner-desktop"></div>
+<ul class="topnav">
+        <li><a href=""><i class="fa fa-home"></i> Home</a></li>
         <li><a href="news"><i class="fa fa-newspaper-o"></i> News</a></li>
-        <li><a href="forums"><i class="material-icons" style="font-size:18px; vertical-align: bottom;">forum</i> Forums</a></li>
-        <li><a href="live"><i class="material-icons" style="font-size:18px; vertical-align: bottom;">devices</i> Live</a></li>
-          
-        <br><li><a href="merch"><i class="material-icons" style="font-size:18px; vertical-align: bottom;">casino</i> Merch</a></li>
-        <li><a href="social"><i class="material-icons" style="font-size:18px; vertical-align: bottom;">share</i> Social</a></li>
-        <li><a href="setup"><i class="fa fa-gamepad"></i> Setup</a></li> 
-          
-        <br><li><a href="about_me"><i class="fa fa-address-book-o"></i> About Me</a></li> 
+        <li><a href="forums"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">forum</i> Forums</a></li>
+        <li><a href="live" style="margin-left: 60px"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">devices</i> Live</a></li>
+        
+        <li><a href="merch"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">casino</i> Merch</a></li>
+        <li><a href="social"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">share</i> Social</a></li>
+        
+        <li><a href="setup" style="margin-left: 60px"><i class="fa fa-gamepad"></i> Setup</a></li>  
+        <li><a href="about_me"><i class="fa fa-address-book-o"></i> About Me</a></li>
         <li><a href="faq"><i class="fa fa-diamond"></i> FAQ</a></li>
-      </ul>       
-    </div>
-  </div>
-</nav>
-<script>
-if (localStorage.getItem("isLogin") == "true")
-{
-    document.getElementById("Button2").innerHTML = '<span class="glyphicon glyphicon-signal"></span>' + " My Profile";       document.getElementById("Button2").onclick = function()  { myProfile(); }   
-    document.getElementById("Button1").onclick = function()  { SignOff(); sign_out();}
-    document.getElementById("Button1").innerHTML = '<span class="glyphicon glyphicon-log-out"></span>' + " Sign Out"; 
     
-    function SignOff()
-    {
-    document.getElementById("Button2").innerHTML = '<span class="glyphicon glyphicon-user"></span>' + " Sign Up";
-    document.getElementById("Button1").onclick = function()  { SignOn() }
-    document.getElementById("Button2").innerHTML = '<span class="glyphicon glyphicon-log-in"></span>' + " Login";  
-    }
-}
-else
-{  
-    function SignOn()
-    {
-    document.getElementById("Button2").innerHTML = '<span class="glyphicon glyphicon-signal"></span>' + " My Profile";   
-    document.getElementById("Button2").onclick = function()  { myProfile(); }  
-    document.getElementById("Button1").onclick = function()  { SignOff(); sign_out(); }
-    document.getElementById("Button1").innerHTML = '<span class="glyphicon glyphicon-log-out"></span>' + " Sign Out";   
+        <li class="right" id="menu-button" style="color:White;"><a onclick="user_menu();" style="background-color: none;"><i class="material-icons">menu</i></a></li>
+    
+        <li class="right; user-menu" id="user-menu1" style="opacity: 0; padding-left: 132px;"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login In</a></li>
+        <li class="right; user-menu" id="user-menu2" style="opacity: 0;"><a class="active" href="settings"><i class="fa fa-cog"></i> Settings</a></li>
+        <li class="right; user-menu" id="user-menu3" style="opacity: 0;"><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+    </ul>
+    
+<div class="border-type">
+    <h1>Color: </h1>
+    
+    <div class="border-inside">
+        
+        <label class="container">One
+            <input type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+        </label>
+        
+    </div>    
+</div>
+    
+<style>
+    body {
+        overflow: hidden;
     }
     
-    function SignOff()
-    {
-    document.getElementById("Button2").innerHTML = '<span class="glyphicon glyphicon-user"></span>' + " Sign Up";
-    document.getElementById("Button1").onclick = function()  { SignOn() }
-    document.getElementById("Button2").innerHTML = '<span class="glyphicon glyphicon-log-in"></span>' + " Login";  
+    h1 {text-align: center;}
+    
+    .border-inside {
+        padding-top: 25px;
     }
-}
-</script>    
+    
+    .border-type {
+        padding: 0;
 
-<br><center><p style="font-family: monospace; font-size: 22px;"> Settings! </p></center>    
+        margin-top: 25px;
+        margin-left: 250px;
+        margin-right: 250px;
+        border: 2px solid black;
+    }
+</style>
               
 </body>
 </html>

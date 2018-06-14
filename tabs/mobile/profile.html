@@ -22,6 +22,8 @@
     
     <script src="../universal/automatic_detect_screen.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <link rel="stylesheet" href="profile_style.css">
 </head>    
 <body>
     
@@ -98,43 +100,56 @@ else
 
 <center><div>
     
-<br><p style="font-family: monospace; font-size: 22px; color:white;"> My Profile </p>
-
-<a id="img">
-    <div id="edit-overlay"></div>
-    <div id="img__overlay" onclick="overlay();"></div>
-    <img src="../images/icons/Mr%20Purple%20Logo.png"/>
-</a>
+<figure class="snip1336">
+  <img src="../images/banners/4k%20wallpaper%208.jpg" alt="sample87" />
+  <figcaption>
+    <div class="container">
+    <img id="overlay" src="../images/icons/Mr%20Purple%20Logo.png" alt="profile-sample4" class="profile overlay"/>
+      <a id="edit-overlay" onclick="edit_image();">Edit Image</a>
+    </div>
+    <h2>MrRobin12<span>Robin Johannesson</span></h2>
+    <p><br>I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello...? </p>
+    <a href="https://youtube.com/c/MrRobin12" class="follow">YouTube</a>
+    <a href="https://snapchat.com/add/robinspelaspel" class="info">Snapchat</a>
+  </figcaption>
+</figure>
     
-<br><p style="font-family: monospace; font-size: 22px; color:white;" >MrRobin12</p>   
-    
-<br><center><table>
+<br><br><center><table>
     <tr>
         <th>LOGIN DETAILS</th>
         <td><a id="profile_login_count"></a></td>
         <td><a id="profile_login_timer"></a></td>
     </tr>
-</table></center>
+</table></center><br><br><br><br><br><br>
     
 </div></center>
     
 <script>
 document.getElementById("profile_login_count").innerHTML = "Logins: " + localStorage.clickcount + " times";    
 document.getElementById("profile_login_timer").innerHTML = "Last login time: " + localStorage.getItem("lastTime");
-</script>
-       
+</script> 
+    
 <script>
+$(".overlay").click(function(e) {
+    document.getElementById("overlay").style.opacity = 0.25;
+    
+    document.getElementById("edit-overlay").style.opacity = 1;
+    document.getElementById("edit-overlay").style.zIndex = 100;
+    e.stopPropagation();
+});
+    
+$(document).click(function(){
+    document.getElementById("overlay").style.opacity = 1;
+    
+    document.getElementById("edit-overlay").style.opacity = 0;
+    document.getElementById("edit-overlay").style.zIndex = -100;
+});
+    
 function edit_image()
 {    
     window.open('home','_self')
 }
-    
-function overlay()
-{
-    document.getElementById("img__overlay").innerHTML = '<button class="edit-image" onclick="edit_image();">Edit image</button>';
-}
-</script>    
-    
+</script>      
 <style>
     body {
         background-color: #121212;
@@ -146,8 +161,24 @@ function overlay()
         width: 100%;
     }
     
+    .container {
+        position: relative;
+        text-align: center;
+        color: white;
+    }
+    
     a {
         color: white;
+    }
+    
+    #edit-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border-radius: 50%;
+        max-width: 50px;
+        transform: translate(-175%, -160%) scale(1.790);
+        opacity: 0; 
     }
     
     td, th {
@@ -161,63 +192,6 @@ function overlay()
     tr:nth-child(even) {
         background-color: #1c1c1c;
     } 
-    
-    #img {
-        border-radius: 100%;
-        display: flex;
-        flex: 0 0 150px;
-        height: 150px;
-        justify-content: center;
-        overflow: hidden;
-        position: relative;
-        width: 150px;
-        border-width: 2px;
-        border-style: solid;
-        border-color: white;
-    }   
-    
-    #img img {
-        height: 100%;
-    }
-    
-    #img__overlay {
-        align-items: center;
-        bottom: 0;
-        display: flex;
-        justify-content: center;
-        left: 0;
-        opacity: 0;
-        position: absolute;
-        right: 0;
-        top: 0;
-        transition: opacity 0.25s;
-        z-index: 1;
-        color: white;
-        background-color: rgba(0,0,0,0.5);
-        font-size: 1.2em;
-    }
-    
-    #img__overlay:hover {
-        opacity: 1;
-    }
-    
-    .edit-image {
-        display: inline-block;
-        background: transparent;
-        color: lightgray;
-        -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
-        -moz-transition: background .2s ease-in-out, border .2s ease-in-out;
-        -o-transition: background .2s ease-in-out, border .2s ease-in-out;
-        transition: background .2s ease-in-out, border .2s ease-in-out;
-        border: 2px solid #4992B7;
-    }
-    
-    .edit-image:hover {
-        color: white;
-        background-color: rgba(255,255,255,0.25);
-    }
-    
-    .edit-image:focus {outline:0;}
     
 </style>    
     
