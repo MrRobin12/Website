@@ -26,13 +26,17 @@ function Load_API() {
         var font_gray = '<font color="gray">';
         var font_end = '</font>';
             
-        var temp_max = response.list[0].main.temp_max;
+        var temp_max = response.main.temp_max;
         var result = temp_max + "°";
+        
+        $.get("https://ipinfo.io", function(response) {     
+            localStorage.setItem("City", response.city);
+        }, "json");    
         
         localStorage.setItem("weather_stats", result);
     }};
         
-    xhttp.open("GET", "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?id=2699310&APPID=fc72e2c9dd086937cb4a0be5d3fe1de2&units=metric", true);
+    xhttp.open("GET", "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=" + localStorage.getItem("City") + "&APPID=fc72e2c9dd086937cb4a0be5d3fe1de2&units=metric", true);
     
     xhttp.setRequestHeader('Access-Control-Allow-Origin', "*");
      
