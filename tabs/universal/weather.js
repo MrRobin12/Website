@@ -31,12 +31,16 @@ function Load_API() {
         
         $.get("https://ipinfo.io", function(response) {     
             localStorage.setItem("City", response.city);
-        }, "json");    
+        }, "jsonp");    
         
         localStorage.setItem("weather_stats", result);
     }};
-        
-    xhttp.open("GET", "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=" + localStorage.getItem("City") + "&APPID=fc72e2c9dd086937cb4a0be5d3fe1de2&units=metric", true);
+    
+    if (localStorage.getItem("City") !== null) {
+        xhttp.open("GET", "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=" + localStorage.getItem("City") + "&APPID=fc72e2c9dd086937cb4a0be5d3fe1de2&units=metric", true);
+    } else {
+        xhttp.open("GET", "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=Stockholm&APPID=fc72e2c9dd086937cb4a0be5d3fe1de2&units=metric", true);
+    }
     
     xhttp.setRequestHeader('Access-Control-Allow-Origin', "*");
      
