@@ -24,8 +24,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     
     <script src="../universal/weather.js"></script>
+    <script src="../universal/fortnite_stats.js"></script>
+   <script src="../universal/youtube_stats.js"></script>
 </head>    
-<body>
+<body onload="Load_API(); Load_API2(); updateText(); updateText2();">
     
 <div id="banner-mobile"></div>
 <link rel="stylesheet" href="bootstrap.min.css">  
@@ -67,9 +69,10 @@
 </nav>
     
 <div>
-    <p id="weather" style="color: white; margin-left: 74%; font-size: 4em;"></p>
-    <p id="weather-text" style="color: white; margin-left: 65%; font-size: 0.5em; text-align: center; margin-top: -25px; line-height: 10px;"></p>    
+    <p id="weather" style="color: white; margin-left: 67%; font-size: 4em;"></p>
+    <p id="weather-text" style="color: white; margin-left: 59%; font-size: 0.75em; text-align: center; margin-top: -24px; line-height: 10px;"></p>    
 </div>
+<br><div id="fortnite_stats"></div><br>
     
 <script>   
 $.get("https://ipinfo.io", function(response) {  
@@ -131,10 +134,24 @@ localStorage.setItem("lastTime", date.getFullYear() + "-" + month + "-" + date.g
 document.getElementById("lastTime_active").innerHTML = "Last login time: " + localStorage.getItem("lastTime");
 </script>
     
+<script>
+
+</script>
+    
 <style>
     body {
+        width: 100%;
+        overflow-x: scroll;
         background-color: rgb(24, 24, 24);
     } 
+    
+    #fortnite_stats {
+        margin-top: -75px;
+        width: 60%;
+        transform: scale(0.6);
+        margin-left: 190 px;
+        text-align: left;
+    }
 </style>
          
 </body>
