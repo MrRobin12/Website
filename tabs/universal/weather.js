@@ -26,7 +26,7 @@ function Load_API() {
         var font_gray = '<font color="gray">';
         var font_end = '</font>';
             
-        var temp_max = response.main.temp_max;
+        var temp_max = response.main.temp;
         var result = temp_max + "°";
         
         $.get("https://ipinfo.io", function(response) {     
