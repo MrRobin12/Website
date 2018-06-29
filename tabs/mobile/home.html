@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="google" value="notranslate">
+    
+    <title>MrRobin12s Hemsida</title>
+    
+    <link rel="stylesheet" type="text/css" href="mobile_class.css">
+    <link rel="stylesheet" type="text/css" href="../universal/banner_class.css"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="../images/icons/Mr%20Web%20Icon.ico">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="login_script.js"></script>
+    
+    <script src="../universal/automatic_detect_screen.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <script src="../universal/weather.js"></script>
+    <script src="../universal/fortnite_stats.js"></script>
+    <script src="../universal/youtube_stats.js"></script>
+    
+    <link href="https://fonts.googleapis.com/css?family=Baumans" rel="stylesheet">
+</head>    
+<body onload="Load_API(); Load_API2(); updateText(); updateText2();">
+    
+<div id="banner-mobile"></div>
+<link rel="stylesheet" href="bootstrap.min.css">  
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menuBar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+        <button class="navbar-toggle" style="color:white;" data-toggle="collapse" data-target="#profileBar"><span class="glyphicon glyphicon-user"></span></button>
+        <a id="lastTime_active" class="navbar-brand">Last login time: </a>
+    </div>
+    <div class="collapse navbar-collapse" id="profileBar">
+        <ul class="nav navbar-nav">
+        <li><a id="Button2" onclick="SignOn(); login_in(); SetTime();" style="color:white;"><span class="glyphicon glyphicon-log-in"></span> Login In</a></li>
+        <li><a href="settings" style="color:white;"><i class="fa fa-cog"></i> Settings</a></li> 
+        <li><a id="Button1" style="color:white;"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      </ul>       
+    </div>
+    <div class="collapse navbar-collapse" id="menuBar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href=""><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="news"><i class="fa fa-newspaper-o"></i> News</a></li>
+        <li><a href="forums"><i class="material-icons" style="font-size:18px; vertical-align: bottom;">forum</i> Forums</a></li>
+        <li><a href="live"><i class="material-icons" style="font-size:18px; vertical-align: bottom;">devices</i> Live</a></li>
+          
+        <br><li><a href="merch"><i class="material-icons" style="font-size:18px; vertical-align: bottom;">casino</i> Merch</a></li>
+        <li><a href="social"><i class="material-icons" style="font-size:18px; vertical-align: bottom;">share</i> Social</a></li>
+        <li><a href="setup"><i class="fa fa-gamepad"></i> Setup</a></li> 
+          
+        <br><li><a href="about_me"><i class="fa fa-address-book-o"></i> About Me</a></li> 
+        <li><a href="faq"><i class="fa fa-diamond"></i> FAQ</a></li>
+      </ul>       
+    </div>
+  </div>
+</nav>
+    
+<div>
+    <p id="weather" style="color: white; margin-left: 67%; font-size: 4em;"></p>
+    <p id="weather-text" style="color: white; margin-left: 59%; font-size: 0.75em; text-align: center; margin-top: -24px; line-height: 10px;"></p>    
+</div>
+<br><div id="fortnite_stats"></div><br>
+    
+<br><p style="text-decoration: underline; color: white; text-align: center; font-family: 'Baumans', cursive; font-weight: bolder;" onclick="location.replace('../test%20folder/Mafia%20VS%20Citizen/Lobby/Client/index.html');">Test Play: Mafia VS Citizen</p>
+    
+<script>   
+$.get("https://ipinfo.io", function(response) {  
+    
+    $.get("https://restcountries.eu/rest/v2/name/" + response.country + "?fullText=true", function(response1) {
+        localStorage.setItem("Country", response1[0].nativeName);
+      }, "json");  
+    
+    if (localStorage.getItem("Country") == "null") {location.reload();}
+    
+    document.getElementById("weather-text").innerHTML = response.city + ", " + response.region + "<br>" + localStorage.getItem("Country");
+    
+    document.getElementById("weather").innerHTML = localStorage.getItem("weather_stats");
+    
+}, "jsonp");    
+</script>    
+
+<script>
+if (localStorage.getItem("isLogin") == "true")
+{
+    document.getElementById("Button2").innerHTML = '<span class="glyphicon glyphicon-signal"></span>' + " My Profile";       document.getElementById("Button2").onclick = function()  { myProfile(); }   
+    document.getElementById("Button1").onclick = function()  { SignOff(); sign_out();}
+    document.getElementById("Button1").innerHTML = '<span class="glyphicon glyphicon-log-out"></span>' + " Sign Out"; 
+    
+    function SignOff()
+    {
+    document.getElementById("Button2").innerHTML = '<span class="glyphicon glyphicon-user"></span>' + " Sign Up";
+    document.getElementById("Button1").onclick = function()  { SignOn() }
+    document.getElementById("Button2").innerHTML = '<span class="glyphicon glyphicon-log-in"></span>' + " Login";  
+    }
+}
+else
+{  
+    function SignOn()
+    {
+    document.getElementById("Button2").innerHTML = '<span class="glyphicon glyphicon-signal"></span>' + " My Profile";   
+    document.getElementById("Button2").onclick = function()  { myProfile(); }  
+    document.getElementById("Button1").onclick = function()  { SignOff(); sign_out(); }
+    document.getElementById("Button1").innerHTML = '<span class="glyphicon glyphicon-log-out"></span>' + " Sign Out";   
+    }
+    
+    function SignOff()
+    {
+    document.getElementById("Button2").innerHTML = '<span class="glyphicon glyphicon-user"></span>' + " Sign Up";
+    document.getElementById("Button1").onclick = function()  { SignOn() }
+    document.getElementById("Button2").innerHTML = '<span class="glyphicon glyphicon-log-in"></span>' + " Login";  
+    }
+}
+</script>    
+<script>  
+    
+function SetTime()
+{
+var date = new Date();
+var month = date.getMonth() + 1;
+localStorage.setItem("lastTime", date.getFullYear() + "-" + month + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes());
+}
+    
+document.getElementById("lastTime_active").innerHTML = "Last login time: " + localStorage.getItem("lastTime");
+</script>
+    
+<script>
+
+</script>
+    
+<style>
+    body {
+        width: 100%;
+        overflow-x: scroll;
+        background-color: rgb(24, 24, 24);
+    } 
+    
+    #fortnite_stats {
+        margin-top: -75px;
+        width: 60%;
+        transform: scale(0.6);
+        margin-left: 190px;
+        text-align: left;
+    }
+</style>
+         
+</body>
+</html>

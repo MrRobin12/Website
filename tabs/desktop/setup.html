@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="google" value="notranslate">
+    
+    <title>MrRobin12s Hemsida</title>
+    
+    <link rel="stylesheet" type="text/css" href="dekstop_class.css"> 
+    <link rel="stylesheet" type="text/css" href="../universal/banner_class.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="scripts/navibar_javascript.js"></script>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="shortcut icon" href="../images/icons/Mr%20Web%20Icon.ico">
+    
+    <script src="../universal/automatic_detect_screen.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>    
+<body>          
+    
+<div id="banner-desktop"></div>  
+<ul class="topnav">
+        <li><a href="home"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="news"><i class="fa fa-newspaper-o"></i> News</a></li>
+        <li><a href="forums"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">forum</i> Forums</a></li>
+        <li><a href="forums" style="margin-left: 60px"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">devices</i> Live</a></li>
+        
+        <li><a href="merch"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">casino</i> Merch</a></li>
+        <li><a href="social"><i class="material-icons" style="font-size:18px; vertical-align: text-bottom;">share</i> Social</a></li>
+        
+        <li><a class="active" href="" style="margin-left: 60px"><i class="fa fa-gamepad"></i> Setup</a></li>  
+        <li><a href="about_me"><i class="fa fa-address-book-o"></i> About Me</a></li>
+        <li><a href="faq"><i class="fa fa-diamond"></i> FAQ</a></li>
+        
+        <li class="right"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login In</a></li>
+        <li class="right"><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+        <li class="right"><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+</ul>
+ 
+<video id="vid" fullscreen muted autoplay>
+  <source id="mp4" src="../videos/Setup%202018.mp4" type="video/mp4">
+</video>
+    
+<br><center>
+<button id="button1" class="vidButton" style="margin-right: 80px; margin-top: 40px; margin-bottom: 20px;" onclick="mute()">Mute Audio</button>
+<button id="button2" class="vidButton" style="margin-left: 80px; margin-top: 40px; margin-bottom: 20px;" onclick="unmute()">Unmute Audio</button>
+<div class="slidecontainer">
+    <br><input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+    <br><p id="volValue"></p>
+</div>
+<br></center>
+    
+<script>
+var video = document.getElementById("vid");
+video.loop = true;
+video.volume = 0.50;
+
+function window.onload()
+{
+    video.muted = false;
+}
+    
+var slider = document.getElementById("myRange");
+var output = document.getElementById("volValue");
+output.innerHTML = slider.value + "%"; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+    output.innerHTML = this.value + "%";
+    var video = document.getElementById("vid");
+    video.volume = this.value / 100;
+}
+
+    
+function mute()
+{   
+    var video = document.getElementById("vid");
+    
+    var button1 = document.getElementById("button1");
+    button1.style.backgroundColor = "purple";
+    
+    var button2 = document.getElementById("button2");
+    button2.style.backgroundColor = "rebeccapurple";
+    
+    video.muted = true;   
+}
+    
+function unmute()
+{   
+    var video = document.getElementById("vid");
+    
+    var button1 = document.getElementById("button1");
+    button1.style.backgroundColor = "rebeccapurple";
+    
+    var button2 = document.getElementById("button2");
+    button2.style.backgroundColor = "purple";
+    
+    video.muted = false;   
+}
+    
+</script>        
+<style> 
+    
+#vid{
+    position: static;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    z-index: 1;
+    -webkit-filter: blur(1px);
+} 
+    
+.slidecontainer {
+    width: 35%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 25px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */ 
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: rebeccapurple; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: rebeccapurple; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+    
+    .vidButton {
+    background-color: rebeccapurple;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    }
+    
+</style>    
+    
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="google" value="notranslate">
+    <title>MrRobin12s Hemsida</title>	
+    <link rel="stylesheet" type="text/css" href="style.css">  
+</head>    
+<body>          
+    
+<div class="bgimg"></div>  
+<div class="middle">
+        <h1>COMING SOON</h1>
+        <hr>        
+        <p id="demo" style="font-size: 30px;"></p>
+        <p style="font-size: 24px;">#GameOn2018</p>
+    </div>
+    
+<script>
+var counter = new Date("Aug 22, 2018 00:00:00").getTime();  
+var countDownfunction = setInterval(function() {
+var now = new Date().getTime();
+var distance = counter - now;
+
+var days = Math.floor(distance / (1000 * 60 * 60 * 24));  
+var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)); 
+var seconds = Math.floor((distance % (1000 * 60)) / 1000); 
+    
+document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+    
+if (distance < 0)
+{
+    clearInterval(countDownfunction);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+}
+},1000);
+    
+</script>    
+    
+</body>
+</html>
