@@ -35,14 +35,32 @@
             });
         })
          
+         var handleLogin = function() {
+            alert("you're logged in!");
+         };
+     
          var url = window.location.href;
-         var token = url.substring(url.indexOf('access_token') + 13, url.indexOf('&scope'));
+         var token = Twitch.getToken()
          
          localStorage.setItem("token", token);
          
          if (url == "http://localhost/LoginIn_Template/index.html#access_token=" + token + "&scope=user_read+channel_read") {
             history.pushState(null, null, '/LoginIn_Template/index.html');
          }
+         
+        Twitch.logout(function(error) {
+        Twitch.events.removeListener('auth.login', handleLogin);
+                
+        document.getElementById("sign_twitch").innerHTML = "Connect With Twitch!";
+            
+        document.getElementById("twitch_email").innerHTML = "";
+        document.getElementById("twitch_username").innerHTML = "";
+        document.getElementById("twitch_id").innerHTML = "";
+        document.getElementById("twitch_image").src = "";
+                
+        window.location.replace("https://mrrobin12.github.io/website/tabs/universal/LoginIn_Template/");
+                
+        });
     });
         
     console.log(localStorage.getItem("token"));
@@ -53,21 +71,6 @@
         
     } else {
         document.getElementById("sign_twitch").innerHTML = "Sign Out!";
-        
-        $("#sign_twitch" ).click(function() {
-            document.getElementById("sign_twitch").innerHTML = "Connect With Twitch!";
-            
-            document.getElementById("twitch_email").innerHTML = "";
-            document.getElementById("twitch_username").innerHTML = "";
-            document.getElementById("twitch_id").innerHTML = "";
-            document.getElementById("twitch_image").src = "";
-            
-            Twitch.logout(function(error) {
-            // the user is now logged out
-            });
-            
-            window.location.replace("https://mrrobin12.github.io/website/tabs/universal/LoginIn_Template/");
-        });
      
         var client_id = "";
         var token = localStorage.getItem("token");
