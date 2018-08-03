@@ -77,6 +77,10 @@
     } else {
         document.getElementById("sign_twitch").innerHTML = "Sign Out!";
      
+        $("#sign_twitch" ).click(function() {
+            document.getElementById("sign_twitch").innerHTML = "Connect With Twitch!";    
+        });
+        
         var client_id = "";
         var token = localStorage.getItem("token");
         var channel_info_url = "https://api.twitch.tv/kraken/channel?oauth_token=" + token + "&client_id=" + client_id;    
