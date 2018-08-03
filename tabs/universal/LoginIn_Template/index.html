@@ -51,11 +51,10 @@
         document.getElementById("sign_twitch").innerHTML = "Connect With Twitch!";
         
         Twitch.init({clientId: 'h3xu1fslxahoph2e0m7oxwbfrqsgpl'}, function(error, status) {
-        $('.twitch-connect').click(function() {
+        
             Twitch.login({
                 scope: ['user_read', 'channel_read']
             });
-        })
          
          var url = window.location.href;
          var token = url.substring(url.indexOf('access_token') + 13, url.indexOf('&scope'));
