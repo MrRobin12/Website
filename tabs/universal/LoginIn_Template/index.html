@@ -56,10 +56,23 @@
                 
         document.getElementById("sign_twitch").innerHTML = "Connect With Twitch!";
             
-        document.getElementById("twitch_email").innerHTML = "";
-        document.getElementById("twitch_username").innerHTML = "";
-        document.getElementById("twitch_id").innerHTML = "";
-        document.getElementById("twitch_image").src = "";
+        var client_id = "";
+        var token = localStorage.getItem("token");
+        var channel_info_url = "https://api.twitch.tv/kraken/channel?oauth_token=" + token + "&client_id=" + client_id;    
+        
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.responseText);
+                document.getElementById("twitch_email").innerHTML = "Email: " + json.email;
+                document.getElementById("twitch_username").innerHTML = "Username: " + json.display_name;
+                document.getElementById("twitch_id").innerHTML = "ID: " + json._id;
+                document.getElementById("twitch_image").src = json.logo;
+            }
+        };
+        
+        xmlhttp.open("GET", channel_info_url, true);
+        xmlhttp.send();
                 
         window.location.replace("https://mrrobin12.github.io/website/tabs/universal/LoginIn_Template/");
                 
@@ -80,24 +93,6 @@
         $("#sign_twitch" ).click(function() {
             document.getElementById("sign_twitch").innerHTML = "Connect With Twitch!";    
         });
-        
-        var client_id = "";
-        var token = localStorage.getItem("token");
-        var channel_info_url = "https://api.twitch.tv/kraken/channel?oauth_token=" + token + "&client_id=" + client_id;    
-        
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                var json = JSON.parse(this.responseText);
-                document.getElementById("twitch_email").innerHTML = "Email: " + json.email;
-                document.getElementById("twitch_username").innerHTML = "Username: " + json.display_name;
-                document.getElementById("twitch_id").innerHTML = "ID: " + json._id;
-                document.getElementById("twitch_image").src = json.logo;
-            }
-        };
-        
-        xmlhttp.open("GET", channel_info_url, true);
-        xmlhttp.send();
     }
     </script>
     
