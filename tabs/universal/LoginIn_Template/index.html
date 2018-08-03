@@ -47,17 +47,8 @@
          if (url == "http://localhost/LoginIn_Template/index.html#access_token=" + token + "&scope=user_read+channel_read") {
             history.pushState(null, null, '/LoginIn_Template/index.html');
          }
-    });
-        
-    console.log(localStorage.getItem("token"));
-        
-    if (localStorage.getItem("token") == "https://mrro") {
-        document.getElementById("sign_twitch").innerHTML = "Connect With Twitch!";
-        
-        
-    } else {
-        document.getElementById("sign_twitch").innerHTML = "Sign Out!";
-        
+         
+                 
         $("#sign_twitch" ).click(function() {
 
         Twitch.logout(function(error) {
@@ -73,7 +64,18 @@
         window.location.replace("https://mrrobin12.github.io/website/tabs/universal/LoginIn_Template/");
                 
         });
+                
         });
+    });
+        
+    console.log(localStorage.getItem("token"));
+        
+    if (localStorage.getItem("token") == "https://mrro") {
+        document.getElementById("sign_twitch").innerHTML = "Connect With Twitch!";
+        
+        
+    } else {
+        document.getElementById("sign_twitch").innerHTML = "Sign Out!";
      
         var client_id = "";
         var token = localStorage.getItem("token");
