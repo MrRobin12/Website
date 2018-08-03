@@ -49,6 +49,24 @@
         
     if (localStorage.getItem("token") == "https://mrro") {
         document.getElementById("sign_twitch").innerHTML = "Connect With Twitch!";
+        
+        Twitch.init({clientId: 'h3xu1fslxahoph2e0m7oxwbfrqsgpl'}, function(error, status) {
+        $('.twitch-connect').click(function() {
+            Twitch.login({
+                scope: ['user_read', 'channel_read']
+            });
+        })
+         
+         var url = window.location.href;
+         var token = url.substring(url.indexOf('access_token') + 13, url.indexOf('&scope'));
+         
+         localStorage.setItem("token", token);
+         
+         if (url == "http://localhost/LoginIn_Template/index.html#access_token=" + token + "&scope=user_read+channel_read") {
+            history.pushState(null, null, '/LoginIn_Template/index.html');
+         }
+    });
+        
     } else {
         document.getElementById("sign_twitch").innerHTML = "Sign Out!";
         
