@@ -13,14 +13,8 @@
 </head>    
 <body>          
     
-    <div class="g-signin2" data-onsuccess="onSignIn" -theme="light" data-width="300" data-height="50"
-      data-longtitle="true"></div>
-    <div class="data">
-        <p>Profile Details</p>
-        <img id="pic" class="img-circle" width="100" height="100"/>
-        <p id="fullname" class="alert alert-danger">Name: </p>
-          <p id="email" class="alert alert-danger">Email Address: </p>
-        <button onclick="signOut()" class="btn btn-danger">Sign Out</button>
+    <div class="google-button">
+        <div class="g-signin2" data-onsuccess="onSignIn" -theme="light" data-width="300" data-height="50" data-longtitle="true"></div>
     </div>
     
     <br><center><a id="sign_twitch" class="twitch-connect">Connect With Twitch!</a></center>
@@ -58,33 +52,24 @@
     } else {
         document.getElementById("sign_twitch").innerHTML = "Sign Out!";
         
-        var client_id = "";
-        var token = localStorage.getItem("token");
-        var channel_info_url = "https://api.twitch.tv/kraken/channel?oauth_token=" + token + "&client_id=" + client_id;    
-        
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                var json = JSON.parse(this.responseText);
-                document.getElementById("twitch_email").innerHTML = "Email: " + json.email;
-                document.getElementById("twitch_username").innerHTML = "Username: " + json.display_name;
-                document.getElementById("twitch_id").innerHTML = "ID: " + json._id;
-                document.getElementById("twitch_image").src = json.logo;
-            }
-        };
-        
-        xmlhttp.open("GET", channel_info_url, true);
-        xmlhttp.send();
+        document.getElementById("twitch_email").innerHTML = "";
+        document.getElementById("twitch_username").innerHTML = ""
+        document.getElementById("twitch_id").innerHTML = "";
+        document.getElementById("twitch_image").src = "";
     }
     </script>
     
     <style>      
-        .g-signin2{ width: 100%; }
+        .g-signin2{ width: 100%;}
 
         .g-signin2 > div{ margin: 0 auto; }
         
         .data {
             display: none;
+        }
+        
+        .google-button {
+            margin-top: 250px;
         }
     </style>    
     <script>
@@ -113,6 +98,14 @@
             });
         }
     </script>
+    
+        <div class="data">
+        <p>Profile Details</p>
+        <img id="pic" class="img-circle" width="100" height="100"/>
+        <p id="fullname" class="alert alert-danger">Name: </p>
+          <p id="email" class="alert alert-danger">Email Address: </p>
+        <button onclick="signOut()" class="btn btn-danger">Sign Out</button>
+    </div>
     
 </body>
 </html>
