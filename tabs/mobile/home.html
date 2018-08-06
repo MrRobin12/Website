@@ -23,13 +23,13 @@
     <script src="../universal/automatic_detect_screen.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     
-    <script src="../universal/weather.js"></script>
+    <script src="../universal/mobile_weather.js"></script>
     <script src="../universal/fortnite_stats.js"></script>
     <script src="../universal/youtube_stats.js"></script>
     
     <link href="https://fonts.googleapis.com/css?family=Baumans" rel="stylesheet">
 </head>    
-<body onload="Load_API(); Load_API2(); updateText(); updateText2();">
+<body onload="getLocation();">
     
 <div id="banner-mobile"></div>
 <link rel="stylesheet" href="bootstrap.min.css">  
@@ -71,28 +71,12 @@
 </nav>
     
 <div>
-    <p id="weather" style="color: white; margin-left: 67%; font-size: 4em;"></p>
-    <p id="weather-text" style="color: white; margin-left: 59%; font-size: 0.75em; text-align: center; margin-top: -24px; line-height: 10px;"></p>    
+    <p id="weather_mobile" style="color: white; margin-left: 67%; font-size: 4em;"></p>
+    <p id="weather-text_mobile" style="color: white; margin-left: 59%; font-size: 0.75em; text-align: center; margin-top: -24px; line-height: 10px;"></p>    
 </div>
 <br><div id="fortnite_stats"></div><br>
     
-<br><p style="text-decoration: underline; color: white; text-align: center; font-family: 'Baumans', cursive; font-weight: bolder;" onclick="location.replace('../test%20folder/Mafia%20VS%20Citizen/Lobby/Client/index.html');">Test Play: Mafia VS Citizen</p>
-    
-<script>   
-$.get("https://ipinfo.io", function(response) {  
-    
-    $.get("https://restcountries.eu/rest/v2/name/" + response.country + "?fullText=true", function(response1) {
-        localStorage.setItem("Country", response1[0].nativeName);
-      }, "json");  
-    
-    if (localStorage.getItem("Country") == "null") {location.reload();}
-    
-    document.getElementById("weather-text").innerHTML = response.city + ", " + response.region + "<br>" + localStorage.getItem("Country");
-    
-    document.getElementById("weather").innerHTML = localStorage.getItem("weather_stats");
-    
-}, "jsonp");    
-</script>    
+<br><p style="text-decoration: underline; color: white; text-align: center; font-family: 'Baumans', cursive; font-weight: bolder;" onclick="location.replace('../test%20folder/Mafia%20VS%20Citizen/Lobby/Client/index.html');">Test Play: Mafia VS Citizen</p>  
 
 <script>
 if (localStorage.getItem("isLogin") == "true")

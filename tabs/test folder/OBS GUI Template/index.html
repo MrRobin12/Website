@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head></head>
+    
+<body>
+    
+<div class="GUI_TOP GUI">
+    <p>TOP</p>
+</div>    
+      
+<div class="page"></div>
+
+<div class="GUI_SIDE_BOTTOM GUI">
+    <p>SIDE</p>
+</div>    
+    
+<div class="GUI_BOTTOM GUI">
+    <p>BOTTOM</p>
+</div>   
+    
+</body>
+    
+<style>
+@import url('https://fonts.googleapis.com/css?family=Chela+One');    
+    
+    body {
+        min-width: 1280px;
+        min-height: 720px;
+        max-width: 1920px;
+        max-height: 1080px;
+        overflow: hidden;
+    }
+    
+    .GUI {
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.50);
+        color: white;
+        position: absolute;
+        text-align: center;
+        width: 1920px;
+        
+        font-size: 2em;
+        font-family: 'Chela One', cursive;
+    }
+    
+    .GUI_TOP {transform: translate(0, 0);}
+    
+    .GUI_BOTTOM {transform: translate(0, 980px);}
+    
+    .GUI_SIDE_BOTTOM {transform: translate(0, 820px); width: 420px; height: 100px;}
+    
+    .page {
+        top: 0;
+        left: 0;
+        position: absolute;
+        z-index: -100;
+        opacity: 0;
+        background-color: red;
+        height: 1080px;
+        width: 1920px;
+    }
+</style>   
+<script>
+    
+</script>
+
+</html>

@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Megrim');
+@import url('https://fonts.googleapis.com/css?family=Baumans');
+    
+body {
+    color: white;
+    font-family: 'Baumans', cursive;
+    overflow: hidden;
+    background-color: rgb(24, 24, 24);
+}
+    
+#multi-chat {
+    margin-top: 32px;
+    font-size: 2.2em;      
+}   

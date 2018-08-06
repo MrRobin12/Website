@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div>
+    <p id="twitch-chat"></p>        
+</div>
+</body>
+    
+<script>
+setInterval(load_chat, 1000);
+
+var stream_channel = "56707769";
+var extra_channel = "167268359";       
+var test_channel = "23161357";
+    
+function load_chat() {
+    $.ajax({
+    
+    url: "https://cors-anywhere.herokuapp.com/https://tmi.twitch.tv/api/rooms/56707769/recent_messages?count=50",
+    dataType: "text",
+    success: function(data) {
+    var json = $.parseJSON(data);
+        
+    var i;
+    for (i = 0; i < json.messages.length; i++) { 
+        var api_message = json.messages[i];
+        
+        var text = "@badges=subscriber/24,bits/1000;color=#000000;display-name=Crostifer;emotes=;historical=1;id=34170b7b-6d9c-4b62-a333-8df7bb83ebca;mod=0;room-id=23161357;subscriber=1;tmi-sent-ts=1531068122927;turbo=0;user-id=43029130;user-type= :crostifer!crostifer@crostifer.tmi.twitch.tv PRIVMSG #lirik :AA3 was the best, but thats not saying much MrGoatsy";
+        
+        api_message = api_message.substring(api_message.indexOf('display-name='))
+        
+        var display_username = api_message.substring(api_message.indexOf('display-name=') + 13, api_message.indexOf(';'));
+        
+        api_message = api_message.substring(api_message.indexOf('user-type=') + 0);
+        
+        var username = api_message;    
+        username = username.substring(username.indexOf(':') + 1, username.indexOf('!'));
+        
+        var channel = api_message;
+        channel = channel.substring(channel.lastIndexOf("#") + 1, channel.lastIndexOf(":"));
+        
+        var message = api_message;    
+        message = message.substring(message.lastIndexOf(" :") + 2, message.lastIndexOf(""));
+        
+        var result = display_username + ": " + message;
+        
+        if (localStorage.getItem("old_result").indexOf(display_username + ": " + message) >= 0) {
+                if (result != localStorage.getItem("old_message")) {            
+                    console.log(json.messages[i]); 
+                    document.getElementById("twitch-chat").innerHTML += result + "<br>";    
+                }
+                
+                localStorage.setItem("old_message", result);
+            } else {       
+ 
+            }
+    }
+    
+    localStorage.setItem("old_result", result);
+}
+});   
+    
+}
+</script>  
+<style>
+@import url('https://fonts.googleapis.com/css?family=Megrim');
+@import url('https://fonts.googleapis.com/css?family=Baumans');
+    
+    body {
+        color: white;
+        font-family: 'Baumans', cursive;
+        overflow: hidden;
+        background-color: rgb(24, 24, 24);
+    }

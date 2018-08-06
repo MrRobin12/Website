@@ -63,7 +63,7 @@
 
 <header>  
 
-<div>
+<div class="text">
     <p id="weather" style="color: white; margin-left: 85%; margin-top: -80px;"></p>
     <p id="weather-text" style="color: white; margin-left: 0%; margin-right: 5%; font-size: 0.5em; text-align: right; margin-top: -100px; line-height: 20px;"></p>    
 </div>
@@ -84,18 +84,20 @@ $.get("https://ipinfo.io", function(response) {
 }, "jsonp");    
 </script>   
     
-<div id="fortnite_stats"></div><br><br><br><br><br><br><br><br><br><br>
+<div class="text" id="fortnite_stats"></div><br><br><br><br><br><br><br><br><br><br>
     
 <center>
-<br><p style="text-decoration: underline; color: white; text-align: center; font-family: 'Baumans', cursive; font-weight: bolder;" onclick="location.replace('../test%20folder/Mafia%20VS%20Citizen/Lobby/Host/index.html');">Test Play: Mafia VS Citizen</p>    
+<br><p class="test-play" style="text-decoration: underline; position: absolute; margin-top: -700px; margin-left: 350px; color: white; text-align: center; font-family: 'Baumans', cursive; font-weight: bolder;" onclick="location.replace('../test%20folder/Mafia%20VS%20Citizen/Lobby/Host/index.html');">Mafia VS Citizen</p>
+<p class="test-play" style="position: absolute; margin-top: -600px; margin-left: 550px; color: white; text-align: center; font-family: 'Baumans', cursive; font-size: 1.4em; font-weight: bolder;" onclick="location.replace('../test%20folder/Mafia%20VS%20Citizen/Lobby/Host/index.html');">TEST PLAY</p>
 </center>    
-<center>
-<p id="notDraggable14" style="color:white; font-family: 'Amarante', cursive;">FORTNITE IS THE SHIT!</p>    
     
-<video id="notDraggable20" class="preview" preload="auto" autoplay="autoplay" muted="muted" loop="loop" webkit-playsinline="" style="width: 1280px; height: 720px; cursor: none;"><source src="https://media.giphy.com/media/2hgwvqribydBxiPddb/giphy.mp4" type="video/mp4"></video>
+<center>
+<p class="text" id="notDraggable14" style="color:white; font-family: 'Amarante', cursive;">FORTNITE IS THE SHIT!</p>    
+    
+<video id="notDraggable20" class="preview" preload="auto" autoplay="autoplay" muted="muted" loop="loop" webkit-playsinline="" style="width: 1280px; height: 720px; cursor: default;"><source src="https://media.giphy.com/media/2hgwvqribydBxiPddb/giphy.mp4" type="video/mp4"></video>
  
-<div class="youtube" id="notDraggable21" style="margin-top: 120px; margin-bottom: -420px;">
-    <h1 style="color: white;"><strong>YouTube - MrRobin12</strong></h1>
+<div class="youtube text" id="notDraggable21" style="margin-top: 120px; margin-bottom: -420px;">
+    <h1 style="color: white; font-family: 'Amarante', cursive;"><strong>YouTube - MrRobin12</strong></h1>
     <h1 style="color: white; text-decoration: underline; margin-top: -140px;"><strong>_____________________________</strong></h1>
     
     <iframe id="youtube-stats_video0" width="888" height="500" style="transform: translate(0%, 10%);" src="http://www.youtube.com/embed/zTbq5HGc5EY?enablejsapi=1&amp&rel=0;origin=http://www.mrrobin12.github.io/website/" frameborder="1" allowfullscreen></iframe>  
@@ -115,38 +117,16 @@ $.get("https://ipinfo.io", function(response) {
 </div>
     
 </center>
-   
-<button onclick="notifyMe();">Notify me!</button>
     
-<script>
-// request permission on page load
-document.addEventListener('DOMContentLoaded', function () {
-  if (!Notification) {
-    alert('Desktop notifications not available in your browser. Try Chromium.'); 
-    return;
-  }
-
-  if (Notification.permission !== "granted")
-    Notification.requestPermission();
-});
-
-function notifyMe() {
-  if (Notification.permission !== "granted")
-    Notification.requestPermission();
-  else {
-    var notification = new Notification('Notification title', {
-      icon: 'http://cdn.sstatic.net/stackexchange/img/logos/so/so-icon.png',
-      body: "Hey there! You've been notified!",
-    });
-
-    notification.onclick = function () {
-      window.open("http://stackoverflow.com/a/13328397/1269037");      
-    };
-
-  }
-
-}
-</script>
+<style>
+    .test-play:hover {
+        cursor: pointer;
+    }
+    
+    .text {
+        cursor: default;
+    }
+</style>
     
 <script src="instafeed.min.js"></script>
 <script src="instafeed_custom.js"></script>
@@ -214,9 +194,6 @@ function notifyMe() {
 </style>
            
 <script src="../universal/menu_bar.js"></script>
-<script>
-    
-</script>
     
 </body>
 </html>
