@@ -73,18 +73,16 @@ h1 {
 }
  
 h2 {
-      font-size: 1.2em;
-   margin: 5px 0; 
-width: 150%;
-   color: rgba(149, 165, 166,1.0);
+    font-size: 1.2em;
+    margin: 5px 0; 
+    width: 150%;
+    color: rgba(149, 165, 166,1.0);
 }
 
-h3 {
-    font-size: 1.2em;
+.title-text {
     position: absolute;
-    margin-top: -140px;
-    margin-left: -10px;
-    text-align: left;
+    margin-top: 50%;
+    font-size: 1.2em;
     color: white;
 
 }
@@ -96,7 +94,7 @@ h4 {
     padding-top: 15px;
     padding-left: 10px;
     padding-bottom: 15px;
-    width: 180%;
+    width: 150%;
     word-wrap: break-word;
     line-height: 15px;
 }
