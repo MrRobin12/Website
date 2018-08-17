@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  
+<meta charset="UTF-8">    
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="menu_dropdown_list.css">
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+
+<body> 
+ 
+<section>
+    
+<marquee id="title" class="title-text" behavior="scroll" direction="left" style="width: 100%; z-index: 100;"></marquee>   
+    
+<div class="audio-timeline" id="timeline" onclick="changePos(event)" style="background-color: rgb(32, 32, 32);">
+  <div id="audio-timeline" style="width: 0%; background-color: rgb(82, 10, 252); color: white; text-align: right; font-weight: bold;"> . </div>    
+</div>
+    
+<div id="fade" style="position: absolute; width: 400px; height: 225px; display:none; background-color: rgba(0, 0, 0, 0.50)"></div> 
+<img src='wallpaper%20car%202.jpg'>
+    <header>
+        <div class="top"><br>
+            <div class="custom-select" style="width: 50%;">
+                <select class="dropdown" style="width: 50; height: 26px">
+                    <option value="" id="popular-option"><i style="font-size:24px" class="fa">&#xf025;</i> Searched By</option>
+                    <option value="popular1" id="popular-option"><i style="font-size:24px" class="fa">&#xf004;</i> Favorite</option>
+                    <option value="popular1" id="popular-option"><i style="font-size:24px" class="fa">&#xf080;</i> Popular</option>
+                    <option value="popular2" id="popular-option"><i style="font-size:24px" class="fa">&#xf133;</i> Dates</option>
+                    <option value="popular3" id="popular-option"><i style="font-size:24px" class="fa">&#xf1ea;</i> Titel</option>
+                </select>
+            </div>
+        </div>
+        <div class='left'>
+            <h1>Robin Johannesson</h1>
+            <h4>GIVE ME FEEDBACK! <br><br> <a href="snapchat://" style="text-decoration: none; color: gray"> OPEN SNAPCHAT</a> <br><br><br> <a target="_blank" href="https://www.dropbox.com/s/bh06jvg1y933npv/Rihanna%20-%20We%20Found%20Love%20Bootleg%20Remix%20%28MrRobin%29.mp3?dl=1" style="text-decoration: none; font-weight: bold; color: rebeccapurple">DOWNLOAD THE SONG</a></h4>
+            <br><h2>2018/08/16</h2>
+            <br><h5 id="webBrowser"></h5>
+        </div>
+        <div class='right'>
+            <audio id="demo" src="Rihanna%20-%20We%20Found%20Love%20Bootleg%20Remix%20(MrRobin).mp3" title="Rihanna - We Found Love Bootleg Remix (MrRobin)"></audio>
+            <button id="play"></button>
+            <button id='pause'></button>
+    </div>
+    </header>
+</section>
+
+<script src="script.js"></script>    
+<script src="menu_dropdown_script.js"></script>   
+    
+<script>
+function changePos(event) {
+    var audio = document.getElementById("demo");
+    var duration = audio.duration;
+    
+    var x = event.clientX;
+    var length = x / document.getElementById('timeline').clientWidth * 169;
+    audio.currentTime = length;
+}
+</script>
+    
+<script>
+// Opera 8.0+
+var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+
+// Firefox 1.0+
+var isFirefox = typeof InstallTrigger !== 'undefined';
+
+// Safari 3.0+ "[object HTMLElementConstructor]" 
+var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || safari.pushNotification);
+
+ // Internet Explorer 6-11
+var isIE = /*@cc_on!@*/false || !!document.documentMode;
+
+// Edge 20+
+var isEdge = !isIE && !!window.StyleMedia;
+
+ // Chrome 1+
+var isChrome = !!window.chrome && !!window.chrome.webstore;
+
+ // Blink engine detection
+var isBlink = (isChrome || isOpera) && !!window.CSS;
+
+var output = 'Detecting browsers by ducktyping:<hr>';
+output += 'isFirefox: ' + isFirefox + '<br>';
+output += 'isChrome: ' + isChrome + '<br>';
+output += 'isSafari: ' + isSafari + '<br>';
+output += 'isOpera: ' + isOpera + '<br>';
+output += 'isIE: ' + isIE + '<br>';
+output += 'isEdge: ' + isEdge + '<br>';
+output += 'isBlink: ' + isBlink + '<br>';
+document.getElementById("webBrowser").innerHTML = output;    
+</script>
+
+</body>      
+</html>
