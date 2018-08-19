@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
+.image_cover {
+    position: absolute;
+    width: 32px;
+    height: 32px; 
+    margin-right: 10px;
+    border: 2px solid rgb(154, 4, 219);
+}
+
+.artist {
+    font-size: 1.6em;
+    margin-left: 50px;
+}
+
+.title {
+    font-size: 1.2em; 
+    word-break: keep-all;
+    font-family: 'Pacifico', cursive;
+}
+
+.album {
+    
+}
+
+.duration {
+    font-weight: bold;
+}
+
+.explicit {
+    border: 2px solid black;
+    padding: 5px;
+    margin-bottom: 5px;
+    font-size: 1.2em; 
+    font-weight: bold;
+}
+
+.date {
+    font-size: 1em; 
+    font-weight: bold; 
+}
