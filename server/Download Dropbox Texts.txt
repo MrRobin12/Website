@@ -1,0 +1,5 @@
+https://dl.dropbox.com/s/vcqq7sqehaurw7i/Akkiki_backstory.txt?dl=0
+
+jQuery.get('https://cors-anywhere.herokuapp.com/https://dl.dropbox.com/s/vcqq7sqehaurw7i/Akkiki_backstory.txt?dl=0', function(data) {
+   alert(data);
+});

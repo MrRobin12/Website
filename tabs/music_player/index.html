@@ -14,7 +14,7 @@
 
 <body> 
  
-<section>
+<section>  
     
 <marquee id="title" class="title-text" behavior="scroll" direction="left" style="width: 100%; z-index: 100;"></marquee>   
     
@@ -22,8 +22,8 @@
   <div id="audio-timeline" style="width: 0%; background-color: rgb(82, 10, 252); color: white; text-align: right; font-weight: bold;"> . </div>    
 </div>
     
-<div id="fade" style="position: absolute; width: 400px; height: 225px; display:none; background-color: rgba(0, 0, 0, 0.50)"></div> 
-<img src='wallpaper%20car%202.jpg'>
+<div id="fade" style="position: absolute; width: 100%; background-color: rgba(0, 0, 0, 0.50);"></div> 
+<img id="wallpaper" src='wallpaper%20car%202.jpg'>
     <header>
         <div class="top"><br>
             <div class="custom-select" style="width: 50%;">
@@ -34,21 +34,168 @@
                     <option value="popular2" id="popular-option"><i style="font-size:24px" class="fa">&#xf133;</i> Dates</option>
                     <option value="popular3" id="popular-option"><i style="font-size:24px" class="fa">&#xf1ea;</i> Titel</option>
                 </select>
-            </div>
+            </div><br>
+            
+            <h1 id="audio_time" style="margin-left: 80%; margin-top: -10%;"></h1>
         </div>
         <div class='left'>
-            <h1>Robin Johannesson</h1>
+            <h1 style="margin-top: -5%;">Robin Johannesson</h1>
+            <button id="play"></button>
+            <button id='pause'></button>
+            <button id='repeat'><i class="fa fa-repeat" aria-hidden="true" style="margin-top: -10px; font-size: 1.4em; position: absolute;"></i></button>
             <h4>GIVE ME FEEDBACK! <br><br> <a href="snapchat://" style="text-decoration: none; color: gray"> OPEN SNAPCHAT</a> <br><br><br> <a target="_blank" href="https://www.dropbox.com/s/bh06jvg1y933npv/Rihanna%20-%20We%20Found%20Love%20Bootleg%20Remix%20%28MrRobin%29.mp3?dl=1" style="text-decoration: none; font-weight: bold; color: rebeccapurple">DOWNLOAD THE SONG</a></h4>
+            
+            <br><p id="song_api"></p>
+            
             <br><h2>2018/08/16</h2>
             <br><h5 id="webBrowser"></h5>
         </div>
         <div class='right'>
-            <audio id="demo" src="Rihanna%20-%20We%20Found%20Love%20Bootleg%20Remix%20(MrRobin).mp3" title="Rihanna - We Found Love Bootleg Remix (MrRobin)"></audio>
-            <button id="play"></button>
-            <button id='pause'></button>
+        <audio id="demo" src="https://dl.dropbox.com/s/bh06jvg1y933npv/Rihanna%20-%20We%20Found%20Love%20Bootleg%20Remix%20%28MrRobin%29.mp3" title="Rihanna - We Found Love Bootleg Remix (MrRobin)"></audio>
     </div>
     </header>
 </section>
+    
+<script>
+var url = "https://www.dropbox.com/s/ht9gi89mibodezb/song_api.json?dl=0";
+jQuery.get('https://cors-anywhere.herokuapp.com/https://dl.dropbox.com/s/ht9gi89mibodezb/song_api.json?dl=0', function(data) {
+    data = jQuery.parseJSON(data)
+    var myObject = data;
+    var count = Object.keys(myObject).length;
+    
+    var i = 0;
+    
+    for (i = 0; i < count; i++) {        
+        var song_title = "Title: " + data[i].Song_title;
+        var artist = "Artist: " + data[i].Artist;
+        
+        var duration_ms =  data[i].duration_ms / 1000 / 60;
+        var duration = "Duration: " + "0" + duration_ms.toFixed(2);
+        duration = duration.replace(".", ":");
+        
+        var audio_url = "https://cors-anywhere.herokuapp.com/https://dl.dropbox.com/s/bh06jvg1y933npv/Rihanna%20-%20We%20Found%20Love%20Bootleg%20Remix%20%28MrRobin%29.mp3";
+        
+        var song_url = "<div id='songURL" + i + "' src='" +  data[i].Song_url + "'></div>";     
+        var image_cover = data[i].album.images[2].url;
+        var img = "<img src='" + image_cover + "' style='width: 32px; height: 32px; margin-right: 10px;'>";
+        var border = "<div id='border" + i + "' onclick='activate" + i + "()' style='border: 2px solid black; padding-left: 10px; padding-right: 10px; padding-top: 10px; margin-bottom: 25px; width: 280px;'>"
+        
+        var result = song_url + border + img + song_title + "<br>" + artist + "<br><br>" + duration + "<br><br>" + "<br>" + "</div>";     
+        
+        document.getElementById("song_api").innerHTML += result;
+    }
+});
+    
+var act0 = false;    
+    
+function activate0() {
+    if (act0 == false) {
+        document.getElementById("border0").style.borderColor = "rgb(239, 16, 221)";
+        document.getElementById("border1").style.borderColor = "black";
+        document.getElementById("border2").style.borderColor = "black";
+        document.getElementById("border3").style.borderColor = "black";
+        document.getElementById("border4").style.borderColor = "black";
+        document.getElementById("border5").style.borderColor = "black";
+        
+        document.getElementById("demo").src = "https://dl.dropbox.com/s/05fev75u4btj2zb/KSI%20-%20On%20Point.mp3";
+        document.getElementById("demo").title = "KSI - On Point";
+        document.getElementById("demo").play();
+        act0 = true;
+    } else {
+        document.getElementById("border0").style.borderColor = "black";
+        act0 = false;
+    }
+}    
+    
+var act1 = false;    
+    
+function activate1() {
+    if (act1 == false) {
+        document.getElementById("border1").style.borderColor = "rgb(239, 16, 221)";
+        document.getElementById("border0").style.borderColor = "black";
+        document.getElementById("border2").style.borderColor = "black";
+        document.getElementById("border3").style.borderColor = "black";
+        document.getElementById("border4").style.borderColor = "black";
+        document.getElementById("border5").style.borderColor = "black";
+        
+        document.getElementById("demo").src = "https://dl.dropbox.com/s/bh06jvg1y933npv/Rihanna%20-%20We%20Found%20Love%20Bootleg%20Remix%20%28MrRobin%29.mp3";
+        document.getElementById("demo").title = "Rihanna - We Found Love Bootleg Remix (MrRobin)";
+        document.getElementById("demo").play();
+        act1 = true;
+    } else {
+        document.getElementById("border1").style.borderColor = "black";
+        act1 = false;
+    }
+}    
+    
+var act2 = false;    
+    
+function activate2() {
+    if (act2 == false) {
+        document.getElementById("border2").style.borderColor = "rgb(239, 16, 221)";
+        document.getElementById("border1").style.borderColor = "black";
+        document.getElementById("border0").style.borderColor = "black";
+        document.getElementById("border3").style.borderColor = "black";
+        document.getElementById("border4").style.borderColor = "black";
+        document.getElementById("border5").style.borderColor = "black";
+        act2 = true;
+    } else {
+        document.getElementById("border2").style.borderColor = "black";
+        act2 = false;
+    }
+}    
+    
+var act3 = false;    
+    
+function activate3() {
+    if (act3 == false) {
+        document.getElementById("border3").style.borderColor = "rgb(239, 16, 221)";
+        document.getElementById("border1").style.borderColor = "black";
+        document.getElementById("border2").style.borderColor = "black";
+        document.getElementById("border0").style.borderColor = "black";
+        document.getElementById("border4").style.borderColor = "black";
+        document.getElementById("border5").style.borderColor = "black";
+        act3 = true;
+    } else {
+        document.getElementById("border3").style.borderColor = "black";
+        act3 = false;
+    }
+}    
+    
+var act4 = false;    
+    
+function activate4() {
+    if (act4 == false) {
+        document.getElementById("border4").style.borderColor = "rgb(239, 16, 221)";
+        document.getElementById("border1").style.borderColor = "black";
+        document.getElementById("border2").style.borderColor = "black";
+        document.getElementById("border3").style.borderColor = "black";
+        document.getElementById("border0").style.borderColor = "black";
+        document.getElementById("border5").style.borderColor = "black";
+        act4 = true;
+    } else {
+        document.getElementById("border4").style.borderColor = "black";
+        act4 = false;
+    }
+}   
+    
+var act5 = false;    
+    
+function activate5() {
+    if (act5 == false) {
+        document.getElementById("border5").style.borderColor = "rgb(239, 16, 221)";
+        document.getElementById("border1").style.borderColor = "black";
+        document.getElementById("border2").style.borderColor = "black";
+        document.getElementById("border3").style.borderColor = "black";
+        document.getElementById("border4").style.borderColor = "black";
+        document.getElementById("border0").style.borderColor = "black";
+        act5 = true;
+    } else {
+        document.getElementById("border5").style.borderColor = "black";
+        act5 = false;
+    }
+}    
+</script>
 
 <script src="script.js"></script>    
 <script src="menu_dropdown_script.js"></script>   
@@ -62,8 +209,20 @@ function changePos(event) {
     var length = x / document.getElementById('timeline').clientWidth * 169;
     audio.currentTime = length;
 }
-</script>
     
+var audio_timeline = document.getElementById("audio-timeline");
+var timeline = document.getElementById("timeline");
+timeline.onmousemove = function(event) {
+        
+var audio = document.getElementById("demo");
+var duration = audio.duration;
+    
+var x = event.clientX;
+var length = x / document.getElementById('timeline').clientWidth * 169;
+audio.currentTime = length; 
+    
+};
+</script>
 <script>
 // Opera 8.0+
 var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
