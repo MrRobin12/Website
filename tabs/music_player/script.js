@@ -81,8 +81,6 @@ document.getElementById("play").onclick = function() {
         isSongPlayed = false;
     }
     
-    document.getElementById('title').innerHTML = "Playing: Rihanna - We Found Love Bootleg Remix...";
-    
     document.getElementById("play").style.background = "url('1383113001_playback_play2.png') center center no-repeat";
     document.getElementById("pause").style.background = "url('1383113014_playback_pause.png') center center no-repeat";
 
