@@ -1,5 +1,10 @@
 var object_length;
 
+window.addEventListener("contextmenu", 
+  function(e){
+     e.stopPropagation()
+}, true);
+
 var url = "https://www.dropbox.com/s/ht9gi89mibodezb/song_api.json?dl=0";
 jQuery.get('https://cors-anywhere.herokuapp.com/https://dl.dropbox.com/s/ht9gi89mibodezb/song_api.json?dl=0', function(data) {
     data = jQuery.parseJSON(data)
@@ -34,9 +39,9 @@ jQuery.get('https://cors-anywhere.herokuapp.com/https://dl.dropbox.com/s/ht9gi89
         
         var audio_url = "https://cors-anywhere.herokuapp.com/https://dl.dropbox.com/s/bh06jvg1y933npv/Rihanna%20-%20We%20Found%20Love%20Bootleg%20Remix%20%28MrRobin%29.mp3";
         
-        var song_url = "<div id='songURL" + i + "' src='" +  data[i].Song_url + "'></div>";     
+        var song_url = "<div id='songURL" + i + "' src='" +  data[i].Song_url + "' oncontextmenu='return false'></div>";     
         var image_cover = data[i].album.images[2].url;
-        var img = "<img class='image_cover' src='" + image_cover + "' style=''>";
+        var img = "<img class='image_cover' src='" + image_cover + "' onclick='openWin" + "(" + i + ")'>";
         var border = "<div id='border" + i + "' onclick='activate(" + i + ")' style='border: 2px solid black; padding-left: 10px; padding-right: 10px; padding-top: 10px; margin-bottom: 25px; width: 280px;'>"
 
         var result = song_url + border + img + artist + "<br><br>" + song_title + "<br><br>" + album + "<br>" + duration + explicit + "<br>" + date + "<br><br>" + "</div>";     
@@ -75,6 +80,16 @@ jQuery.get('https://cors-anywhere.herokuapp.com/https://dl.dropbox.com/s/ht9gi89
 });
 
 }]
+
+function openWin(num) {
+    jQuery.get('https://cors-anywhere.herokuapp.com/https://dl.dropbox.com/s/ht9gi89mibodezb/song_api.json?dl=0', function(data) {
+        data = jQuery.parseJSON(data)
+        var myObject = data;
+        var count = Object.keys(myObject).length;
+        var image_cover = data[num].album.images[2].url;
+        window.open(image_cover);
+    });
+}
 
 function activate(num) {
     for (i = 0; i < object_length; i++) {
