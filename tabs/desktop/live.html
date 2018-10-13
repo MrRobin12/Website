@@ -46,10 +46,12 @@
         <li class="right"><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
 </ul>
     
-<br><center><div id="twitch-embed"></div></center>
+<link rel="stylesheet" href="../universal/Effect/Matrix/style.css">  
+<script src="../universal/Effect/Matrix/script.js"></script>
+    
+<center><div id="twitch-embed" style="z-index: 100; position: absolute; left: 18%; margin-top: 40px;"></div></center>
 <script src="https://embed.twitch.tv/embed/v1.js"></script>
     
-<center><button id="twButton" onclick="window.open('http://www.twitch.tv/mrrobin12ftw/')" style="margin-top: 2px; color:white; background-color: rebeccapurple; border: none; display: inline-block; text-align: center; padding: 8px 406px; font-family: monospace; font-size: 1.2em;"> Open Twitch Link</button></center>
     
 <script type="text/javascript">
       new Twitch.Embed("twitch-embed", {
@@ -62,9 +64,9 @@
       });
     </script>    
     
-<br><center><iframe src="https://www.youtube.com/embed/live_stream?channel=UCo7UzdjhDSxYqKR0rZnuU4Q" width="960px" height="540px" frameborder="0" allowfullscreen></iframe></center>  
-<center><button id="ytButton" onclick="" style="margin-top: 2px; color:white; background-color: red; border: none; display: inline-block; text-align: center; padding: 8px 406px; font-family: monospace; font-size: 1.2em;">  Open YouTube Link</button></center>
+<br><center><iframe src="https://www.youtube.com/embed/live_stream?channel=UCo7UzdjhDSxYqKR0rZnuU4Q" width="960px" height="540px" frameborder="0" allowfullscreen style="z-index: 100; position: absolute; left: 18%; margin-top: 600px;"></iframe></center>  
     
+<canvas id="canvas"></canvas>          
 <style>
     body {
         background-color: #121212;

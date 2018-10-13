@@ -26,6 +26,9 @@
 <body>
     
 <div id="banner-mobile"></div>
+<script src="../universal/Effect/Matrix/script.js"></script>
+<link rel="stylesheet" href="../universal/Effect/Matrix/style.css">      
+    
 <link rel="stylesheet" href="bootstrap.min.css">  
 
 <nav class="navbar navbar-inverse">
@@ -95,15 +98,30 @@ else
     }
 }
 </script>    
-
-<br><center><div id="twitch-embed"></div></center>
+    
+<center><div id="twitch-embed" style="z-index: 100; position: absolute; left: 8%; margin-top: 40px;"></div></center>
 <script src="https://embed.twitch.tv/embed/v1.js"></script>
     
-<center><button id="twButton" onclick="window.open('twitch://stream/mrrobin12ftw')" style="margin-top: 2px; color:white; background-color: rebeccapurple; border: none; display: inline-block; text-align: center; padding: 8px 90px; font-family: monospace; font-size: 1.2em;"> Open Twitch App</button></center>
-
-<br><center><iframe src="https://www.youtube.com/embed/live_stream?channel=UCo7UzdjhDSxYqKR0rZnuU4Q" width="320px" height="240px" frameborder="0" ></iframe></center>  
+<center><iframe src="https://www.youtube.com/embed/live_stream?channel=UCo7UzdjhDSxYqKR0rZnuU4Q" width="320px" height="240px" frameborder="0" style="z-index: 100; position: absolute; left: 8%; margin-top: 300px;"></iframe></center>  
     
-<center><button id="ytButton" onclick="window.open('youtube://user/robinspelaspel/live')" style="margin-top: 2px; color:white; background-color: red; border: none; display: inline-block; text-align: center; padding: 8px 90px; font-family: monospace; font-size: 1.2em;"> Open YouTube App</button></center>
+<center><p id="gameplay" style="color: white; z-index: 100; position: absolute; left: 8%; margin-top: 580px; font-size: 1.45em">LIVE WITH: </p></center>    
+    
+<script>
+var url = "https://api.twitch.tv/kraken/channels/mrrobin12ftw?client_id=j47taumj3y0tjjl7zj0vraoqazur37";
+    
+$.ajax({
+    url: url,
+    type: 'GET',
+    async: false,
+    success: function(data) {
+        var game = data.game;
+        document.getElementById("gameplay").innerHTML = "LIVE WITH: " + game.toUpperCase(); 
+        
+    }
+});
+</script>    
+    
+<canvas id="canvas"></canvas>         
 
 <script type="text/javascript">
       new Twitch.Embed("twitch-embed", {

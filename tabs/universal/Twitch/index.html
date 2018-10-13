@@ -1,0 +1,74 @@
+<html>
+<head>   
+    
+<meta name="viewport" content="width=device-width, initial-scale=1">    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>    
+<script src="https://cdn.tmijs.org/js/1.2.1/tmi.min.js" integrity="sha384-eE0n7sm1W7DOUI2Xh5I4qSpZTe6hupAO0ovLfqEy0yVJtGRBNfssdmjbJhEYm6Bw" crossorigin="anonymous"></script>   
+    
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+    
+</head>
+
+<!-- Button to open the modal login form -->
+<button id="buttonLogin" onclick="document.getElementById('id01').style.display='block'; document.getElementById('buttonLogin').style.display='none'" style="width: 40%; position: absolute; left: 30%; top: 25%;">Login</button>
+
+<!-- The Modal -->
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'; document.getElementById('buttonLogin').style.display='block'" 
+class="close" title="Close Modal">&times;</span>
+
+  <!-- Modal Content -->
+  <form class="modal-content animate" action="">
+    <div class="imgcontainer">
+      <img src="twitch%20logo%202.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+        <label for="uname"><b>Twitch Username</b></label>
+        <input id="username" type="text" placeholder="Enter Username" name="uname" onkeyup='saveValue(this);' required>
+
+        <label for="uchannel"><b>Twitch Channel</b></label>
+        <input id="channel" type="text" placeholder="Enter Channel" name="uchannel" onkeyup='saveValue(this);' required>    
+        
+        <button class="tokenButton" id="token" onclick="getToken()" type="button">Get Token</button>
+
+        <button onclick="login()" type="button">Login</button><br>
+        <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+<body> 
+    
+<script>
+var showDebug = false;    
+    
+var options = {
+    options: {
+        debug: false
+    },
+    connection: {
+        reconnect: true
+    },
+    identity: {
+        username: "mrrobin12ftw",
+        password: "oauth:3lgqswfe89h8378pjqkgatnrxw8qzb"
+    },
+    channels: ["#mrrobin123ftw"]
+};
+
+var client = new tmi.client(options);
+
+// Connect the client to the server..
+client.connect();    
+</script>   
+    
+</body>    
+</html>

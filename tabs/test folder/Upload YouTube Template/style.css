@@ -1,0 +1,82 @@
+body {
+    background-color: rgb(32, 32, 32);
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+input[type=file] {
+  cursor: pointer;
+  width: 180px;
+  height: 34px;
+  overflow: hidden;
+}
+
+input[type=file]:before {
+  width: 158px;
+  height: 32px;
+  font-size: 16px;
+  line-height: 32px;
+  content: 'Select your file';
+  display: inline-block;
+  background: white;
+  border: 1px solid #000;
+  padding: 0 10px;
+  text-align: center;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+input[type=file]::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+#input {
+    margin-left: 250px;
+    margin-top: 60px;
+}
+
+.item {
+    background-color: rgb(64, 64, 64);
+    color: white;
+    margin-top: 20px;
+    padding: 0px 0px 48px 10px;
+}
+
+.title {
+    background: transparent;
+    border: none;
+    
+    color: white;
+    width: 100%;
+    font-size: 1.25vw;
+    padding-top: 5px;
+    font-family: monospace;
+}
+
+.title:focus {
+    margin-left: -10px;
+    padding: 5px;
+    outline: none !important;
+    border: 1px solid red;
+}
+
+.item p {
+    margin-top: 0px;
+    font-size: 1.8vw;
+    
+    float: left;
+    font-family: monospace;
+    margin-right: 32px;
+}
+
+.item p1 {
+    margin-top: 0px;
+    font-size: 1.8vw;
+    
+    float: right;
+    font-family: monospace;
+    margin-right: 32px;
+}

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en"><head>		
+		<title id="pagetitle">Spotify API</title>
+        <script src="https://spotify-player.herokuapp.com/spotify-player.js"></script>
+          <link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	
+<body>
+   
+    <div class="container">
+    <div class="login-container hidden" id="js-login-container" style="display: none;">
+      <button class="btn btn--login" id="js-btn-login">Login with Spotify</button>
+    </div>
+    <div class="hidden" id="js-main-container" style="display: block;">
+    <div class="main-wrapper">
+      <img class="now-playing__img" src="https://i.scdn.co/image/a0b8ff14e272c79221ff1924f109eee9e01432a4">
+      <div class="now-playing__side">
+        <div class="now-playing__name">In My Mind</div>
+        <div class="now-playing__artist">Dynoro</div>
+        <div class="now-playing__status">Playing</div>
+        <div class="progress">
+          <div class="progress__bar" style="width:7.280017338534893%"></div>
+        </div>
+      </div>
+    </div>
+    <div class="background" style="background-image:url(https://i.scdn.co/image/a0b8ff14e272c79221ff1924f109eee9e01432a4)"></div>
+  </div>
+</div>   
+    <script src="spotify-player.js"></script>   
+    <script src="spotify-web-api.js"></script>
+    
+    <script>
+        var spotifyApi = new SpotifyWebApi();
+        
+        spotifyApi.setAccessToken('BQCJ-scrLI-C-fzEUHzNi-7Hl6bDIs2mbtTzAEW0JmYLX2xnNmFC-AUIysw8CV6obaGf_Crwed5PSsxYrAcE6JUgN5g74Tgs5duItKbKMX_90_JgKceNIoGyKWTLdhPYaH-gnuRVVTNqsAFMV2hu5L7C1CVAyufAynME2ATsClKhMPk6NdJiAWI_8oZbcmqTBwxErc3-BnK2pEsZs-g5vXxuli-V6HQpjEFw4vXhvd4kUK8E6MPUleGkF6L3AE9hIzj0zbvtng');
+        
+        var object = "0d347e62d830acc3fb56602e8451c5f19a5c69d8";
+        spotifyApi.pause();
+        
+    </script>    
+	
+    
+</body></html>

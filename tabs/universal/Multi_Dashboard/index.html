@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>		
+    <title id="pagetitle">Multi Dashboard</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ttv-api.s3.amazonaws.com/twitch.min.js"></script>
+    
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+	
+<body>
+ 
+<div> 
+<h1>Twitch API</h1><p>Robin Johannesson</p>
+    
+<input class="input" id="title" onclick="cleartext_title();" onfocusout="check_title();" type="text" placeholder="Title: " maxlength="135"><br><br><br>
+<input class="input" id="category" onclick="cleartext_category();" onfocusout="check_category();" type="text" placeholder="Category: " maxlength="135"><br><br><br>
+    
+<button class="update" id="update_button" onclick="update();">Update!</button>
+<button class="update" onclick="UpdateYouTubeVideos();">Update Spider-Man!</button>
+</div> 
+</body>
+	
+</html>
