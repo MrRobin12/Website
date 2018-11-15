@@ -1,0 +1,45 @@
+<html>
+<head>
+    
+</head>
+    
+<body>
+    
+<script>    
+function getParameters(url) {
+    //Params obj
+    var params = {};
+    //To lowercase
+    url = url.toLowerCase();
+    //To array
+    url = url.split(/[#&]/);
+
+    //Iterate over url parameters array
+    var length = url.length;
+    for(var i=0; i<length; i++) {
+        //Create prop
+        var prop = url[i].slice(0, url[i].search('='));
+        //Create Val
+        var value = url[i].slice(url[i].search('=')).replace('=', '');
+        //Params New Attr
+        params[prop] = value;
+    }
+    return params;
+};
+    
+var currentURL = document.location.href;    
+    
+console.log(getParameters(currentURL));
+var jsonStr = JSON.stringify(getParameters(currentURL));
+document.body.innerHTML = jsonStr;
+    
+</script>    
+    
+<style>
+body {
+  font-family: Arial;
+}    
+</style>
+    
+</body>
+</html>
